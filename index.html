@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PORTFOLIO</title>
+    <!--  화면 사이즈 변환하는 태그(모바일 태그 입력 시 꼭 필요)-->
+    <!--  모바일에서 스크롤을 내리면 주소창이 숨겨지고, 스크롤을 올리면 주소창이 보이게-->
+    <!--  안드로이드-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!--  ios-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--   자바스크립트로 모바일 웹 주소창 숨기기-->
+    <script>
+        window.addEventListener('load',function(){
+            //body의 height를 살짝 늘리는 코드
+            document.body.style.height = 
+            (document.documentElement.clientHeight+5)+'px';
+            //scroll를 제어하는 코드
+            setTimeout(function(){window.scrollTo(0,1);},100);
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./main.js"></script> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="shortcut icon" href="./data/favicon.png" type="image/png">
+</head>
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <h2 class="tit">Park Seul Gi</h2>
+        </header>
+        <main id="con">
+            <div class="page" id="page1">
+                <figure class="vs"></figure>
+                <ul class="tit_box">
+                    <li>
+                        <h1 class="i_tit">Introducing Park Seul gi</h1>
+                        <h4 class="con">박슬기를 소개합니다</h4>
+                    </li>
+                </ul>
+                <nav class="gnb">
+                    <ul>
+                        <li class="li1">About ME</li>
+                        <li class="li2">Works</li>
+                        <li class="li2">PortFolio</li>
+                        <li class="li3">Contect</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="page" id="page2">
+                <div class="content">
+                    <ul class="p_tit">
+                        <li class="a"><span>A</span></li>
+                        <li class="b"><span>B</span></li>
+                        <li class="o"><span>O</span></li>
+                        <li class="u"><span>U</span></li>
+                        <li class="t"><span>T</span></li>
+                        <li class="m"><span>M</span></li>
+                        <li><span>E</span></li>
+                    </ul>
+                    <ul class="top_box">
+                        <li class="img">
+                            <img src="./data/IMG_0569.JPG" alt="면접사진" class="photo">
+                        </li>
+                        <li class="intro">박슬기</li>
+                        <li class="intro">1998.12.16</li>
+                    </ul>
+                    <ul class="bottom_box">
+                        <li class="int">
+                            <h4 class="int_tit">Education</h4>
+                            <p>2014.03~2017.02 대전대성여자고등학교 비서사무과 졸업</p>
+                            <p>2016.11~2019.01 개업상사 디자인담당사원</p>
+                        </li>
+                        <li class="int">
+                            <h4 class="int_tit">Certificate</h4>
+                            <p>국가공인 기술자격 GTQ / 국가공인 기술자격 ITQ</p>
+                            <p>제품응용모델링기능사</p>
+                        </li>
+                        <li class="int">
+                            <h4 class="int_tit">Skills</h4>
+                            <p>Phortoshop/Illustrator</p>
+                            <p>Html/Css</p>
+                            <p>Javascript/Jquery</p>
+                            <p>Rhino/3Dmax/Autocad</p>
+                        </li>
+                        <li class="int">
+                            <h4 class="int_tit">Hobby</h4>
+                            <p>캐릭터 일러스트 그리기/완결된 웹툰 정주행</p>
+                            <p>완결된 드라마 정주행</p>
+                            <p>코인노래방 투어</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cha">
+                    <img src="./data/chac.png" alt="박슬기캐릭터" class="cha_img">
+                </div>
+            </div>
+            <div class="page" id="page3">
+                <h2 class="p3_tit">Skills</h2>
+            </div>
+            <div class="page" id="page4">
+                <div class="aside"></div>
+                <div class="desk">
+                    <h3 class="c_tit">DeskTop</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="http://placehold.it/333/200x200" alt="무주">
+                                <p>MUJU</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="http://placehold.it/333/200x200" alt="하겐다즈">
+                                <p>HAGENDAZ</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile">
+                    <h3 class="c_tit">Moblie</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="http://placehold.it/333/200x200" alt="BTS">
+                                <p>BTS</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ban">
+                    <h3 class="c_tit"></h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="http://placehold.it/333/200x200" alt="pixar">
+                                <p>PIXAR</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="http://placehold.it/333/200x200" alt="국가보훈처">
+                                <p>국가보훈처</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="http://placehold.it/333/200x200" alt="대성여자고등학교">
+                                <p>대성여자고등학교</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="http://placehold.it/333/200x200" alt="부여군청">
+                                <p>부여군청</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="http://placehold.it/333/200x200" alt="대화제약">
+                                <p>대화제약</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page" id="page5">
+                <div class="left"></div>
+                <ul class="contect">
+                    <li>
+                        <i class="xi-mobile"></i>
+                        <p>010.2367.6138</p>
+                    </li>
+                    <li>
+                        <i class="xi-mail"></i>
+                        <p>biberhadal@naver.com</p>
+                    </li>
+                    <li>
+                        <i class="xi-maker"></i>
+                        <p>대전광역시 서구 월평중로4번길 75 101호</p>
+                    </li>
+                </ul>
+                <ul class="sns">
+                    <li>
+                        <i class="xi-facebook-official"></i>
+                    </li>
+                    <li>
+                        <i class="xi-twitter"></i>
+                    </li>
+                    <li>
+                        <i class="xi-instagram"></i>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <div id="up">↑</div>
+    </div>
+</body>
+</html>

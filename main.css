@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* common */
+* { margin: 0; padding: 0;}
+body,html { width: 100%; height: 100%; font-family: "dohyun";}
+body::-webkit-scrollbar { display: none;}
+ul { list-style: none;}
+a { text-decoration: none;}
+.wrap { width: 100%;}
+
+/* header */
+#hd { width: 100%; height: 15vh;}
+.tit { font-size: 4vh; font-family: "black"; text-align: center; line-height: 20vh; color: #99ce66;}
+
+/* main */
+#con { width: 100%;}
+.page { width: 100%; height: 100vh;}
+
+/* page1 */
+#page1 { height: calc(100vh - 15vh); position: relative;}
+.vs { width: 100%; height: 85%; background-image: url("./data/notebook.jpg"); background-size: cover; background-position: center center;}
+.tit_box { position: absolute; width: 100%; top: 35%; color: white; font-size: 2vh; text-shadow: 1px 1px 2px #333;}
+.i_tit { width: 45%; text-align: center; margin: 0 auto;}
+.con { display: block; text-align: center; line-height: 3;}
+.gnb { width: 100%; height: 15%; font-size: 2vh;}
+.gnb li { width: 25%; float: left; text-align: center; line-height: 13vh; cursor: pointer;}
+.gnb li:hover { color: #99ce66;}
+
+/* page2 */
+#page2 { background: repeating-linear-gradient(-45deg, #eee, #eee 1px, #99ce66 0, #99ce66 20px); overflow: hidden; position: relative;}
+.content { background-image: url("./data/mal.png"); width: 95%; height: 90vh; margin: 5vh 2.5%; float: left; background-size: 100% 100%;}
+.cha { position: absolute; width: 45vh; bottom: -16%; left: -4%;}
+.cha img{ width: 100%;}
+.p_tit { width: 15%; font-size: 6vh; margin-top: 4%; float: left; text-align: center; font-family: "black";}
+.a, .b, .o, .u, .t { color: #99ce66;}
+.m { margin-top: 15px;}
+.top_box { width: 85%; height: 20%; float: right; margin-top: 4%;}
+.img { float: left; padding-right: 5%;}
+.photo { border-radius: 10%; height: 25vh; margin-left: 20px;}
+.intro { font-size: 3vh;}
+.bottom_box { clear: both; float: right;}
+
+/* media query */
+@media screen and ( max-width:767px ){
+    /* 모바일 */
+}
+@media screen and ( min-width:768px ) and ( max-width:1024px ){
+    /* 테블릿 */
+}
+@media screen and ( min-width:1025px ){
+    /* 데스크탑 */
+}

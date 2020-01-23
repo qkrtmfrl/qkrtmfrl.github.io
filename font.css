@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@font-face{
+    font-family: "black";
+    src : local("BlackHanSans-Regular_0"), url("./font/BlackHanSans-Regular_0.ttf") format("true-type"), url("./font/BlackHanSans-Regular_0.eot") format("embeded-truetype"), url("./font/BlackHanSans-Regular_0.woff") format("woff")
+}
+
+@font-face{
+    font-family: "dohyun";
+    src : local("BMDOHYEON_ttf"), url("./font/BMDOHYEON_ttf.ttf") format("true-type"), url("./font/BMDOHYEON_ttf.eot") format("embeded-truetype"), url("./font/BMDOHYEON_ttf.woff") format("woff")
+}
