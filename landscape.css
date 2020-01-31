@@ -1,0 +1,54 @@
+@charset "utf-8";
+/*pae2*/
+.p_tit { width: 10%;}
+.top_box { width: 45%; overflow: hidden; float: left;}
+.cha { width: 22%;}
+.photo { width: 15%;}
+.intro { font-size: 3.5vh; margin-top: 8%; float: left;}
+.intro li::before { width: 3px; height: 1.5vh; margin-left: -10%;}
+.name { margin-bottom: 20px;}
+.personality img, .pine img { width: 30%;}
+.bottom_box { margin-left: 20px; float: right; width: 40%;}
+.int_tit { font-size: 2vh; margin-bottom: 10px; color: #99ce66;}
+.int { margin-bottom: 12%; text-align: center;}
+/*page3*/
+.p3_tit { background-image: url("./data/skill_img.png"); background-repeat: no-repeat; width: 20%; height: 100%; background-size: cover; float: left; background-position: center; color: white; font-size: 5vh; text-align: center; line-height: 100vh; text-shadow: 3px 3px 0px #43b549;}
+.skill_box { width: 70%; height: 100vh; float: right; margin-right: 4%;}
+.skill_box li { float: left; width: 14.28%;}
+.sk_bar { width: 20%; height: 50vh; background-color: #ddd; margin: 30% auto; border-radius: 100px; overflow: hidden; position: relative; margin-top: 20vh;}
+.sk_bar::before { content: ""; display: block; width: 100%; height: 0; background: linear-gradient( to bottom, #99ce66, #43b549); bottom: 0; position: absolute;}
+.sk1 .bar::before { height: 75%;}
+.sk2 .bar::before { height: 70%;}
+.sk3 .bar::before { height: 65%;}
+.sk4 .bar::before { height: 85%;}
+.sk5 .bar::before { height: 80%;}
+.sk6 .bar::before { height: 70%;}
+.sk7 .bar::before { height: 60%;}
+.sk_con { display: block; width: 80px; height: 80px; border-radius: 100%; margin: 0 auto; line-height: 80px; font-size: 1vh; background-color: #fff; text-align: center; border-width: 8px; border-style: solid; border-color: #99ce66 #99ce66 #43b549 #43b549;}
+/*page4*/
+
+
+@media screen and ( max-height:767px){
+    .top_box { width: 80%;}
+    .cha { bottom: -15%;}
+    .intro { margin-left: 5%;}
+    .intro li::before { width: 2px;}
+    .bottom_box { display: none;}
+    .personality, .pine { font-size: 2vh;}
+    .personality { margin-top: 4%; margin-bottom: 2%;}
+    .personality img, .pine img { width: 20%;}
+    .sk_con { width: 40px; height: 40px; line-height: 40px; font-size: 8px;}
+}
+@media screen and ( width:812px ) and ( height:375px){
+    .cha { bottom: -22%;}
+}
+@media screen and ( width:1024px){ 
+    .cha { bottom: -8%;}
+    .intro { font-size: 2vh; margin-left: 10%;}
+}
+@media screen and ( min-width:1025px){
+    .photo { width: 18%;}
+    .cha { bottom: -15%;}
+    .intro { font-size: 2vh; margin-left: 10%;}
+    .t_tit { margin-bottom: 20px;}
+}

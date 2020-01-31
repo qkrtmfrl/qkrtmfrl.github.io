@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="./font.css">
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" media="all and (orientation: portrait)" href="portrait.css" /> <!--화면이 세로모드 일 경우-->
+    <link rel="stylesheet" media="all and (orientation: landscape)" href="landscape.css" /> <!--화면이 가로모드 일 경우-->
     <link rel="shortcut icon" href="./data/favicon.png" type="image/png">
 </head>
 <body>
@@ -62,38 +64,52 @@
                         <li class="m"><span>M</span></li>
                         <li><span>E</span></li>
                     </ul>
-                    <ul class="top_box">
-                        <li class="img">
-                            <img src="./data/IMG_0569.JPG" alt="면접사진" class="photo">
-                        </li>
-                        <li class="intro">박슬기</li>
-                        <li class="intro">1998.12.16</li>
-                    </ul>
-                    <ul class="bottom_box">
-                        <li class="int">
-                            <h4 class="int_tit">Education</h4>
-                            <p>2014.03~2017.02 대전대성여자고등학교 비서사무과 졸업</p>
-                            <p>2016.11~2019.01 개업상사 디자인담당사원</p>
-                        </li>
-                        <li class="int">
-                            <h4 class="int_tit">Certificate</h4>
-                            <p>국가공인 기술자격 GTQ / 국가공인 기술자격 ITQ</p>
-                            <p>제품응용모델링기능사</p>
-                        </li>
-                        <li class="int">
-                            <h4 class="int_tit">Skills</h4>
-                            <p>Phortoshop/Illustrator</p>
-                            <p>Html/Css</p>
-                            <p>Javascript/Jquery</p>
-                            <p>Rhino/3Dmax/Autocad</p>
-                        </li>
-                        <li class="int">
-                            <h4 class="int_tit">Hobby</h4>
-                            <p>캐릭터 일러스트 그리기/완결된 웹툰 정주행</p>
-                            <p>완결된 드라마 정주행</p>
-                            <p>코인노래방 투어</p>
-                        </li>
-                    </ul>
+                    <div class="cont">
+                        <ul class="top_box">
+                            <li class="nomal">
+                                <img src="./data/IMG_0569.JPG" alt="면접사진" class="photo">
+                                <ul class="intro">
+                                    <li class="name"><p>Name : 박슬기</p></li>
+                                    <li class="age"><p>Age : 23(1998.12.16)</p></li>
+                                </ul>
+                            </li>
+                            <li class="personality">
+                                <img src="./data/memo.jpg" alt="메모">
+                                <h3 class="t_tit">"메모하는 습관"</h3>
+                                <p>이른 나이에 사회생활을 시작 하게 되어서 실수가 잦았는데, 바로바로 고칠 때에 메모하는 습관이 많은 도움이 되었고, 그 결과 같이 일하시는 분들께서 바로바로 실수나 개선해서 좋다고 말씀하실 정도로 실수가 많이 줄어들고, 꼼꼼하게 업무 할 수 있게 되었습니다.</p>
+                            </li>
+                            <li class="pine">
+                                <img src="./data/pine.jpg" alt="소나무">
+                                <h3 class="t_tit">"소나무 같은 사람"</h3>
+                                <p>저는 사시사철 푸른 소나무처럼 변하지 않고 노력하는 사람이 되고 싶습니다. 소나무는 자신의 자리를 지키며, 변하지 않고 묵묵히 자신의 일을 해냅니다. 저도 소나무처럼 맡겨진 일에 변하지 않고 열심히 하는 사람이 되고 싶습니다. 또 꼼꼼함과 저의 장점인 성실함을 가지고 노력하여 부족한 것을 채우고 발전하고 싶습니다.</p>
+                            </li>
+                        </ul>
+                        <ul class="bottom_box">
+                            <li class="int">
+                                <h4 class="int_tit">Education</h4>
+                                <p>2014.03~2017.02 대전대성여자고등학교 비서사무과 졸업</p>
+                                <p>2016.11~2019.01 개업상사 디자인담당사원</p>
+                            </li>
+                            <li class="int">
+                                <h4 class="int_tit">Certificate</h4>
+                                <p>국가공인 기술자격 GTQ / 국가공인 기술자격 ITQ</p>
+                                <p>제품응용모델링기능사</p>
+                            </li>
+                            <li class="int">
+                                <h4 class="int_tit">Skills</h4>
+                                <p>Phortoshop/Illustrator</p>
+                                <p>Html/Css</p>
+                                <p>Javascript/Jquery</p>
+                                <p>Rhino/3Dmax/Autocad</p>
+                            </li>
+                            <li class="int">
+                                <h4 class="int_tit">Hobby</h4>
+                                <p>캐릭터 일러스트 그리기/완결된 웹툰 정주행</p>
+                                <p>완결된 드라마 정주행</p>
+                                <p>코인노래방 투어</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="cha">
                     <img src="./data/chac.png" alt="박슬기캐릭터" class="cha_img">
@@ -101,72 +117,260 @@
             </div>
             <div class="page" id="page3">
                 <h2 class="p3_tit">Skills</h2>
+                <ul class="skill_box">
+                    <li class="sk1">
+                        <div class="sk_bar"></div>
+                        <p class="sk_con">HTML</p>
+                    </li>
+                    <li class="sk2">
+                        <div class="sk_bar"></div>
+                        <p class="sk_con">CSS</p>
+                    </li>
+                    <li class="sk3">
+                        <div class="sk_bar"></div>
+                        <p class="sk_con">JQUERY</p>
+                    </li>
+                    <li class="sk4">
+                        <div class="sk_bar"></div>
+                        <p class="sk_con">PHOTOSHOP</p>
+                    </li>
+                    <li class="sk5">
+                        <div class="sk_bar"></div>
+                        <p class="sk_con">ILLUSTRATOR</p>
+                    </li>
+                    <li class="sk6">
+                        <div class="sk_bar"></div>
+                        <p class="sk_con">RHINO</p>
+                    </li>
+                    <li class="sk7">
+                        <div class="sk_bar"></div>
+                        <p class="sk_con">3DMAX</p>
+                    </li>
+                </ul>
             </div>
             <div class="page" id="page4">
-                <div class="aside"></div>
-                <div class="desk">
-                    <h3 class="c_tit">DeskTop</h3>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <img src="http://placehold.it/333/200x200" alt="무주">
-                                <p>MUJU</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="http://placehold.it/333/200x200" alt="하겐다즈">
-                                <p>HAGENDAZ</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mobile">
-                    <h3 class="c_tit">Moblie</h3>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <img src="http://placehold.it/333/200x200" alt="BTS">
-                                <p>BTS</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="ban">
-                    <h3 class="c_tit"></h3>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <img src="http://placehold.it/333/200x200" alt="pixar">
-                                <p>PIXAR</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="http://placehold.it/333/200x200" alt="국가보훈처">
-                                <p>국가보훈처</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="http://placehold.it/333/200x200" alt="대성여자고등학교">
-                                <p>대성여자고등학교</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="http://placehold.it/333/200x200" alt="부여군청">
-                                <p>부여군청</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="http://placehold.it/333/200x200" alt="대화제약">
-                                <p>대화제약</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <div class="slideshow">
+				<div class="slides">
+					<div class="slide slide--current">
+						<div class="slide__img"><img src="./data/pixar_mocup.png" alt="픽사"></div>
+						<ul class="port_box">
+						    <li><img src="./data/tool.png" alt="사용했던툴"></li>
+						    <li><p class="slide__desc">Mobile / Tablet / Desktop 반응형 디자인</p></li>
+						    <li><h2 class="slide__title">PIXAR</h2></li>
+						    <li><h4 class="po_tit">프로젝트 개요</h4><p class="slide__desc">애니메이션 제작사 픽사의 홈페이지를 리디자인 했습니다.<br>기존의 심플한 디자인을 바탕으로 사용성을 위해 내용을<br>메인에 좀 더 위치하였습니다.</p></li>
+						    <li>
+						        <h4 class="po_tit">포인트 컬러</h4>
+                                <ul class="color1 col">
+                                    <li>
+                                        <div></div>
+                                        <p>#c4d0f5</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#aaaaaa</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#333333</p>
+                                    </li>
+                                </ul>
+				            </li>
+						</ul>
+						<a class="slide__link" href="#">자세히보기</a>
+					</div>
+					<div class="slide">
+						<div class="slide__img"><img src="./data/haggendaz_mocup.png" alt="하겐다즈"></div>
+						<ul class="port_box">
+						    <li><img src="./data/tool.png" alt="사용했던툴"></li>
+						    <li><p class="slide__desc">Desktop 데스크탑 디자인</p></li>
+						    <li><h2 class="slide__title">하겐다즈</h2></li>
+						    <li><h4 class="po_tit">프로젝트 개요</h4><p class="slide__desc">식료품 회사 하겐다즈의 홈페이지를 리디자인 했습니다.<br>기존의 디자인이 하겐다즈 아이스크림의 쇼핑몰과 전혀 맞지 않아<br>전체적으로 화이트와 심플한 디자인을 진행하였다.</p></li>
+						    <li>
+						        <h4 class="po_tit">포인트 컬러</h4>
+                                <ul class="color2 col">
+                                    <li>
+                                        <div></div>
+                                        <p>#530f28</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#c58d2d</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#333333</p>
+                                    </li>
+                                </ul>
+				            </li>
+						</ul>
+						<a class="slide__link" href="#">자세히 보기</a>
+					</div>
+					<div class="slide">
+						<div class="slide__img"><img src="./data/BTS_mocup.png" alt="BTS"></div>
+						<ul class="port_box">
+						    <li><img src="./data/tool.png" alt="사용했던툴"></li>
+						    <li><p class="slide__desc">Mobile 모바일 디자인</p></li>
+						    <li><h2 class="slide__title">BTS</h2></li>
+						    <li><h4 class="po_tit">프로젝트 개요</h4><p class="slide__desc">아이돌 BTS의 소개페이지를 디자인하였습니다.<br>전체적으로 블랙을 사용하여 모던함을 더하였고,<br>보라색을 포인트 컬러로 사용하였습니다.</p></li>
+						    <li>
+						        <h4 class="po_tit">포인트 컬러</h4>
+                                <ul class="color3 col">
+                                    <li>
+                                        <div></div>
+                                        <p>#111111</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#80298f</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#efefef</p>
+                                    </li>
+                                </ul>
+				            </li>
+						</ul>
+						<a class="slide__link" href="#">자세히 보기</a>
+					</div>
+					<div class="slide">
+						<div class="slide__img"><img src="./data/bohun_mocup.png" alt="국가보훈처"></div>
+						<ul class="port_box">
+						    <li><img src="./data/tool.png" alt="사용했던툴"></li>
+						    <li><p class="slide__desc">Mobile / Tablet / Desktop 반응형 디자인</p></li>
+						    <li><h2 class="slide__title">국가보훈처</h2></li>
+						    <li><h4 class="po_tit">프로젝트 개요</h4><p class="slide__desc">국가보훈처 사이트를 리디자인 하였습니다.<br>기존 페이지의 컬러는 그대로 인용하였고, 레이아웃을<br>블록형식으로 리디자인하여 한눈에 보기 쉽도록 하였습니다.</p></li>
+						    <li>
+						        <h4 class="po_tit">포인트 컬러</h4>
+                                <ul class="color4 col">
+                                    <li>
+                                        <div></div>
+                                        <p>#1191ad</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#4d74c4</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#a449e4</p>
+                                    </li>
+                                </ul>
+				            </li>
+						</ul>
+						<a class="slide__link" href="#">자세히 보기</a>
+					</div>
+					<div class="slide">
+						<div class="slide__img"><img src="./data/muju_mocup.png" alt="무주"></div>
+						<ul class="port_box">
+						    <li><img src="./data/tool.png" alt="사용했던툴"></li>
+						    <li><p class="slide__desc">Desktop 데스크탑 디자인</p></li>
+						    <li><h2 class="slide__title">MUJU</h2></li>
+						    <li><h4 class="po_tit">프로젝트 개요</h4><p class="slide__desc">전라북도 무주를 소개하는 페이지를 디자인 하였습니다.<br>메뉴구성을 관광과 역사, 축제 등으로 하여 민원보다는<br>정보를 위주로 디자인 하였습니다.</p></li>
+						    <li>
+						        <h4 class="po_tit">포인트 컬러</h4>
+                                <ul class="color4 col">
+                                    <li>
+                                        <div></div>
+                                        <p>#141784</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#4d74c4</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#a449e4</p>
+                                    </li>
+                                </ul>
+				            </li>
+						</ul>
+						<a class="slide__link" href="#">자세히 보기</a>
+					</div>
+					<div class="slide">
+						<div class="slide__img"><img src="./data/daesung_mocup.png" alt="대성여자고등학교"></div>
+						<ul class="port_box">
+                            <li><p class="slide__desc">Mobile / Tablet / Desktop 반응형 디자인</p></li>
+                            <li><h2 class="slide__title">대성여자고등학교</h2></li>
+                            <li><h4 class="po_tit">프로젝트 개요</h4><p class="slide__desc">대성여자고등학교의 페이지를 리디자인 하였습니다.<br>기존의 페이지의 색감을 그대로 사용하였고,<br>기존의 페이지보다 콘텐츠를 넓게 위치하여 더 보시기 편하도록 하였습니다.</p></li>
+                            <li>
+                                <h4 class="po_tit">포인트 컬러</h4>
+                                <ul class="color4 col">
+                                    <li>
+                                        <div></div>
+                                        <p>#83b7ff</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#6292d4</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#efefef</p>
+                                    </li>
+                                </ul>
+                            </li>
+						</ul>
+						<a class="slide__link" href="#">자세히 보기</a>
+					</div>
+					<div class="slide">
+						<div class="slide__img"><img src="./data/buyeo_mocup.png" alt="부여군청"></div>
+						<ul class="port_box">
+                            <li><p class="slide__desc">Mobile / Tablet / Desktop 반응형 디자인</p></li>
+                            <li><h2 class="slide__title">부여군청</h2></li>
+                            <li><h4 class="po_tit">프로젝트 개요</h4><p class="slide__desc">부여군청 사이트를 리디자인 하였습니다.<br>본래의 부여군청의 화이트가 아닌 블랙을 추가하여<br>좀 더 고혹한 느낌을 주었고,콘텐츠를 페이지 별로 나눠좀 더 보기 쉽도록 하였습니다. </p></li>
+                            <li>
+                                <h4 class="po_tit">포인트 컬러</h4>
+                                <ul class="color4 col">
+                                    <li>
+                                        <div></div>
+                                        <p>#0e7bbe</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#344a77</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#298195</p>
+                                    </li>
+                                </ul>
+                            </li>
+						</ul>
+						<a class="slide__link" href="#">자세히 보기</a>
+					</div>
+					<div class="slide">
+						<div class="slide__img"><img src="./data/daehwa_mocup.png" alt="대화제약"></div>
+						<ul class="port_box">
+                            <li><p class="slide__desc">Mobile / Tablet / Desktop 반응형 디자인</p></li>
+                            <li><h2 class="slide__title">대화제약</h2></li>
+                            <li><h4 class="po_tit">프로젝트 개요</h4><p class="slide__desc">식약품회사인 대화제약을 홈페이지를 리디자인하였습니다.<br>기존의 홈페이지의 메인페이지에서 다른 페이지로 이동하는 불편함을<br>없앴고, 좀 더 심플한 느낌을 주기 위해 바탕을 화이트로 주었습니다.</p></li>
+                            <li>
+                                <h4 class="po_tit">포인트 컬러</h4>
+                                <ul class="color4 col">
+                                    <li>
+                                        <div></div>
+                                        <p>#cc2c1b</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#333333</p>
+                                    </li>
+                                    <li>
+                                        <div></div>
+                                        <p>#efefef</p>
+                                    </li>
+                                </ul>
+                            </li>
+						</ul>
+						<a class="slide__link" href="#">자세히 보기</a>
+					</div>
+				</div>
+				<nav class="slidenav">
+					<button class="slidenav__item slidenav__item--prev">Previous</button>
+					<span>/</span>
+					<button class="slidenav__item slidenav__item--next">Next</button>
+				</nav>
+			    </div>
             </div>
             <div class="page" id="page5">
                 <div class="left"></div>
@@ -199,5 +403,9 @@
         </main>
         <div id="up">↑</div>
     </div>
+    <script src="js/demo.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/demo2.js"></script>
 </body>
 </html>

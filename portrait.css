@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+.p_tit { width: 20%;}
+.top_box { height: 60%; overflow: hidden;}
+.intro { font-size: 3.5vw; margin-left: 10%; margin-top: 10%; float: left;}
+.intro li::before { width: 5px; height: 2.5vh; left: -6%;}
+.name { margin-bottom: 8%;}
+.cha { width: 50%; bottom: -10%; left: -5%;}
+.personality, .pine { font-size: 2vw;}
+.personality img { width: 30%;}
+.t_tit { margin-bottom: 5px;}
+.pine img { width: 30%;}
+.bottom_box { float: right; width: 80%; font-size: 2vw; margin-top: -10px;}
+.int_tit { color: #99ce66; margin-bottom: 10px;}
+.int { float: left; width: 45%; margin-left: 5%; height: 11vh;}
+@media screen and ( max-width:767px){
+    .top_box { height: 100%;}
+    .photo { width: 30%;}
+    .intro li::before { width: 3px;}
+    .personality img, .pine img { width: 40%; margin-right: 5%;}
+    .personality, .pine { font-size: 1.9vh;}
+    .personality { margin-bottom: 25px;}
+    .bottom_box { display: none;}
+}
