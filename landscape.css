@@ -16,7 +16,7 @@
 .skill_box { width: 70%; height: 100vh; float: right; margin-right: 4%;}
 .skill_box li { float: left; width: 14.28%;}
 .sk_bar { width: 20%; height: 50vh; background-color: #ddd; margin: 30% auto; border-radius: 100px; overflow: hidden; position: relative; margin-top: 20vh;}
-.sk_bar::before { content: ""; display: block; width: 100%; height: 0; background: linear-gradient( to bottom, #99ce66, #43b549); bottom: 0; position: absolute;}
+.sk_bar::before { content: ""; display: block; width: 100%; height: 0; background: linear-gradient( to bottom, #99ce66, #43b549); bottom: 0; position: absolute; transition: 0.8s;}
 .sk1 .bar::before { height: 75%;}
 .sk2 .bar::before { height: 70%;}
 .sk3 .bar::before { height: 65%;}
