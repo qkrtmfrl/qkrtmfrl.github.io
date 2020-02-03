@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="대전대성여자고등학교, 대성재단, 특성화고, 경영회계과, 보건간호과, 미디어디자인과, 외식조리과, 뷰티디자인과">
+    <meta name="description" content="대전대성여자고등학교, 대성재단, 특성화고, 경영회계과, 보건간호과, 미디어디자인과, 외식조리과, 뷰티디자인과">
+    <title>대전대성여자고등학교</title>
+    <!--  화면 사이즈 변환하는 태그(모바일 태그 입력 시 꼭 필요)-->
+    <!--  모바일에서 스크롤을 내리면 주소창이 숨겨지고, 스크롤을 올리면 주소창이 보이게-->
+    <!--  안드로이드-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!--  ios-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--   자바스크립트로 모바일 웹 주소창 숨기기-->
+    <script>
+        window.addEventListener('load',function(){
+            //body의 height를 살짝 늘리는 코드
+            document.body.style.height = 
+            (document.documentElement.clientHeight+5)+'px';
+            //scroll를 제어하는 코드
+            setTimeout(function(){window.scrollTo(0,1);},100);
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            function nextAni(){
+                $(".img_box").not(":animated").animate({"margin-left":"-100%"},500,function(){
+                $(".img_box li").eq(0).appendTo(".img_box");
+                $(".img_box").css("margin-left","0");
+                $(".btn_box2 li").eq(0).appendTo($(".btn_box2"));
+                $(".btn_box2 li button").removeClass("on");
+                $(".btn_box2 li").eq(0).find("button").addClass("on");
+                });
+            }
+            function prevAni(){
+                $(".img_box li").eq(2).prependTo(".img_box");
+                $(".img_box").css("margin-left","-100%");
+                $(".img_box").not(":animated").animate({"margin-left":"0"},500);
+                $(".btn_box2 li").eq(len-1).prependTo($(".btn_box2"));
+                $(".btn_box2 li button").removeClass("on");
+                $(".btn_box2 li").eq(0).find("button").addClass("on");
+            }
+            var intv = setInterval(function(){ nextAni()},2900);
+            $(".btn_box1 .l_item").click(function(){
+                clearInterval(intv);
+                prevAni();
+                intv = setInterval(function(){ nextAni()},2900);
+            });
+            $(".btn_box1 .r_item").click(function(){
+                clearInterval(intv);
+                nextAni();
+                intv = setInterval(function(){ nextAni()},2900);
+            });
+            $(".btn_box2").click(function(){
+                clearInterval(intv);
+                var idx = $(this).index();
+                if(idx!=0) {
+                    for(var a=0;a<idx-1;a++){
+                        $(".btn_box2 li").eq(0).appendTo($(".btn_box2"));
+                        $(".img_box li").eq(0).appendTo($(".img_box"));
+                    }
+                nextAni();
+                }
+                intv = setInterval(function(){nextAni();},2900); 
+            });
+            $(".btn .rt_btn").click(function(){
+                    $(".intro_box").not(":animated").animate({"margin-left":"-50%"},500,function(){
+                        $(".intro_box li").eq(0).appendTo(".intro_box");
+                        $(".intro_box").css("margin-left","0");
+                    });
+            });
+            $(".btn .lt_btn").click(function(){
+                $(".intro_box li").eq(4).prependTo(".intro_box");
+                $(".intro_box").css("margin-left","-50%");
+                $(".intro_box").not(":animated").animate({"margin-left":"0"},500);
+            });
+        });
+    </script>
+    <meta name="author" content="seul">
+    <!--    홈페이지 제작자 이름 기재-->
+    <meta property="og:title" content="대전대성여자고등학교">
+    <meta property="og:keywords" content="대전 가양동 위치 특성화고등학교 대전대성여자고등학교">
+    <meta property="og:description" content="대전 가양동 위치 특성화고등학교 대전대성여자고등학교">
+    <meta property="og:image" content="">
+    <meta property="fb:app_id" content="">
+    <meta property="twitter:card" content="대전대성여자고등학교">
+    <meta property="twitter:title" content="대전대성여자고등학교">
+    <meta property="twitter:description" content="대전 특성화고">
+    <meta property="twitter:image" content="./data/favicon.png">
+    <link rel="shortcut icon" href="./data/favicon.png" type="image/png">
+    <!--    x-icon 사용 CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!--    폰트 연결-->
+    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <nav class="tnb">
+                <ul class="tnb_lst">
+                    <li class="t_item"><a href="./index.html">Home</a></li>
+                    <li class="t_item"><a href="./login.html">로그인</a></li>
+                    <li class="t_item"><a href="./join.html">회원가입</a></li>
+                </ul>
+            </nav>
+            <a href="./index.html" class="logo">
+                <img src="./data/logo2.png" alt="로고+한글+영어">
+            </a>
+            <nav class="gnb">
+                <ul class="gnb_lst">
+                    <li class="g_item"><a href="./sub1.html">학교소개</a></li>
+                    <li class="g_item"><a href="./sub2.html">입학정보</a></li>
+                    <li class="g_item"><a href="./sub3.html">진로상담</a></li>
+                    <li class="g_item"><a href="./sub4.html">알림마당</a></li>
+                </ul>
+            </nav>
+            <input type="checkbox" name="ck1" id="ck">
+            <label for="ck" class="se_btn">
+                <img src="./data/search_btn.png" alt="검색">
+            </label>
+            <form action="" class="search">
+                <input type="text">
+                <input type="submit">
+            </form>
+        </header>
+        <main id="con">
+            <div class="page" id="page1">
+                <figure class="vs">
+                    <ul class="img_box">
+                        <li class="i_item"><img src="./data/banner1.png" alt="배너1"></li>
+                        <li class="i_item"><img src="./data/banner2.png" alt="배너2"></li>
+                        <li class="i_item"><img src="./data/banner3.png" alt="배너3"></li>
+                        <li class="i_item"><img src="./data/banner4.png" alt="배너4"></li>
+                    </ul>
+                </figure>
+                <ul class="btn_box1">
+                    <li class="l_item"><img src="./data/btn.png" alt="왼쪽"></li>
+                    <li class="r_item"><img src="./data/btn.png" alt="오른쪽"></li>
+                </ul>
+                <ul class="btn_box2">
+                    <li class="b_item1"><button class="on"></button></li>
+                    <li class="b_item2"><button></button></li>
+                    <li class="b_item3"><button></button></li>
+                    <li class="b_item4"><button></button></li>
+                </ul>
+            </div>
+            <div class="page" id="page2">
+                <h2 class="page_tit">학교행사</h2>
+                <h4>School Event</h4>
+                <ul class="im_box">
+                    <li class="im_item">
+                        <img src="./data/event(3).jpg" alt="10월 창의인재씨앗학교 GO(高) BUSKING 행사(명석고, 보문고)">
+                        <h5>10월 창의인재씨앗학교 GO(高) BUSKING 행사(명석고, 보문고)</h5>
+                        <p>2019/11/07</p>
+                    </li>
+                    <li class="im_item">
+                        <img src="./data/event(4).jpg" alt="2019학년도 창의인재씨앗학교 운영 학교 도우미에 대한 학생회 격려품 전달">
+                        <h5>2019학년도 창의인재씨앗학교 운영 학교 도우미에 대한 학생회 격려품 전달</h5>
+                        <p>2019/10/14</p>
+                    </li>
+                    <li class="im_item">
+                        <img src="./data/event(2).jpg" alt="학부모와 함께하는 문화탐방 프로그램 실시">
+                        <h5>학부모와 함께하는 문화탐방 프로그램 실시</h5>
+                        <p>2019/10/14</p>
+                    </li>
+                    <li class="im_item">
+                        <img src="./data/event(5).jpg" alt="2019년 하반기 학생예절교육 실시">
+                        <h5>2019년 하반기 학생예절교육 실시</h5>
+                        <p>2019/10/11</p>
+                    </li>
+                    <li class="im_item">
+                        <img src="./data/event(6).jpg" alt="2019 취업역량강화를 위한 교내취업캠프 실시">
+                        <h5>2019 취업역량강화를 위한 교내취업캠프 실시</h5>
+                        <p>2019/09/09</p>
+                    </li>
+                    <li class="im_item">
+                        <img src="./data/event(1).jpg" alt="7월 창의인재씨앗학교 GO(高) BUSKING 행사(본교 동아리)">
+                        <h5>7월 창의인재씨앗학교 GO(高) BUSKING 행사(본교 동아리)</h5>
+                        <p>2019/08/05</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="page" id="page3">
+                <h2 class="page_tit">학과소개</h2>
+                <h4>Introduction</h4>
+                <figure class="intro">
+                    <ul class="intro_box">
+                        <li class="in_item"><img src="./data/intro(1).png" alt="미디어디자인과"></li>
+                        <li class="in_item"><img src="./data/intro(2).png" alt="외식조리과"></li>
+                        <li class="in_item"><img src="./data/intro(3).png" alt="경영회계과"></li>
+                        <li class="in_item"><img src="./data/intro(4).png" alt="보건간호과"></li>
+                        <li class="in_item"><img src="./data/intro(5).png" alt="뷰티디자인과"></li>
+                    </ul>
+                </figure>
+                <ul class="btn">
+                    <li class="lt_btn"><img src="./data/btn.png" alt="왼쪽"></li>
+                    <li class="rt_btn"><img src="./data/btn.png" alt="오른쪽"></li>
+                </ul>
+            </div>
+            <div class="page" id="page4">
+                <div class="video">
+                    <h2 class="page_tit">홍보동영상</h2>
+                    <h4>Promotional Video</h4>
+                    <video src="./data/ds.mp4" controls poster="./data/video_poster.jpg"></video>
+                </div>
+                <div class="notice">
+                    <h2 class="page_tit">공지사항</h2>
+                    <h4>Notice</h4>
+                    <table class="tb">
+                        <tbody>
+                            <tr>
+                                <td class="col1">창작 ucc 일러스트 중학생 공모전 수상자 명단</td>
+                                <td class="col2">2019-11-15</td>
+                            </tr>
+                            <tr>
+                                <td class="col1">2019 재난대응 안전한국훈련 안내</td>
+                                <td class="col2">2019-10-22</td>
+                            </tr>
+                            <tr>
+                                <td class="col1">2019학년도 2학기 중간고사 시험 시간표 안내</td>
+                                <td class="col2">2019-09-20</td>
+                            </tr>
+                            <tr>
+                                <td class="col1">대전대성여고 기간제교사(영어) 최종합격자 발표 및 채용서류 반환 공고</td>
+                                <td class="col2">2019-09-11</td>
+                            </tr>
+                            <tr>
+                                <td class="col1">창작 ucc 일러스트 중학생 공모전 수상자 명단</td>
+                                <td class="col2">2019-09-10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <footer id="ft">
+            <p class="adress">(34601)대전광역시 동구 대성2길 20 (가양1동 309번지) <br>
+                TEL : (042) 670-2000 / FAX:(042) 632-0551 / 민원발급시간 08:20~16:20 <br>
+                사업자 등록 번호:null / 기관 메일:null</p>
+            <p class="copyright">Copyrightⓒ 대전대성여자고등학교. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

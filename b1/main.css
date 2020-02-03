@@ -1,0 +1,193 @@
+@charset "utf-8";
+* { margin: 0; padding: 0;}
+        body, html { width: 100%; height: 100%; font-family: "ridi";}
+        ul { list-style: none;}
+        a { text-decoration: none;}
+        input, label, button { background-color: transparent; border: 0; outline: 0;}
+        table { display: table;}
+        tr { display: table-row;}
+        th, td { display: table-cell;}
+        .wrap { width: 100%; height: 100%;}
+        
+
+        /* 헤더영역 */
+        #hd { width: 100%; background-color: #6292d4; overflow: hidden; position: relative;}
+        .logo { display: block;}
+        .logo img { width: 100%;}
+        .gnb li { float: left;}
+        .gnb a { display: block; text-align: center; font-family: "black"; color: #fff;}
+        #ck { display: none;}
+
+        /* 메인영역 */
+        .con { width: 100%; height: 100%;}
+        .page { width: 100%;}
+        #page1 { position: relative;}
+
+        .vs { overflow: hidden;}
+        .img_box { width: 400%;}
+        .img_box li { width: 25%; float: left;}
+        .img_box img { width: 100%;}
+        .btn_box2 { clear: both; position: absolute; z-index: 99;}
+        .btn_box2 li { width: 25px; overflow: hidden; float: left; position: absolute;}
+        .btn_box2 .b_item1 { left: 0;}
+        .btn_box2 .b_item2 { left: 20%;}
+        .btn_box2 .b_item3 { left: 40%;}
+        .btn_box2 .b_item4 { left: 60%;}
+        .btn_box2 button { display: block; width: 15px; height: 15px; background-color: #ddd; border-radius: 20px; transition: 0.5s; cursor: pointer;}
+        .btn_box2 button.on { width: 25px; background-color: #6292d4; left: -10px;}
+        .page_tit { font-family: "black";}
+
+        /* 푸터영역 */
+        #ft { background-color: #333; color: #fff; text-align: center; font-size: 13px; margin-top: 150px;}
+        p { display: block; line-height: 30px;}
+        .adress { padding-top: 10px;}
+        .copyright { clear: both; padding-bottom: 10px;}
+
+        /* 미디어쿼리영역 */
+        @media screen and (max-width: 767px){
+            #hd { height: 15%;}
+            .tnb { display: none;}
+            .logo { width: 60%; margin: 10px auto;}
+            .gnb { width: 100%; position: absolute; bottom: 5%;}
+            .gnb li { width: 25%;}
+            .gnb a { font-size: 18px;}
+            .se_btn { display: none;}
+            .search { display: none;}
+            /* 슬라이드 */
+            .vs { width: 100%;}
+            .btn_box1 { display: none;}
+            .btn_box2 { display: none;}
+            /* page2 */
+            #page2 { height: 80vh;}
+            .page_tit { font-size: 30px; float: left; margin-top: 5%; margin-left: 20px;}
+            h4 { margin-top: 30px; margin-left: 15px; float: left; margin-bottom: 10%;}
+            .im_box { width: 90%; margin: 0 7%; clear: both;}
+            .im_box li { width: 45%; height: 100px; float: left; position: relative; margin-bottom: 30%;}
+            .im_box li:nth-child(2n) { margin-left: 5%;}
+            .im_box img { width: 100%; height: 100%;}
+            .im_box h5 { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; margin-top: 10px;}
+            .im_box p { display: block; margin-top: 10px; font-size: 12px;}
+            /* page3 */
+            #page3 { height: 80vh; position: relative; overflow: hidden;}
+            .intro { width: 80%; overflow: hidden; margin: 0px auto; }
+            .intro_box { width: 400%;  margin: 15% 0;}
+            .intro_box li { float: left; margin: 8px; width: 11%;}
+            .intro_box img { width: 100%;}
+            .btn { position: absolute; width: 100%; top: 50%; left: 0;}
+            .btn li { float: left; width: 10%;}
+            .btn .lt_btn { transform: rotate(180deg);}
+            .btn .rt_btn { float: right;}
+            .btn img { height: 50px;}
+            /* page4 */
+            video { width: 80%; margin-left: 10%;}
+            .tb { width: 80%; margin-left: 10%; table-layout: fixed; height: 200px;}
+            td { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+            .col1 { width: 80%;}
+            .col2 { width: 20%;}
+            /* 푸터영역 */
+            #ft { margin-top: 50px;}
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px){
+            #hd { height: 17%;}
+            .tnb { display: none;}
+            .logo { width: 40%; margin: 20px auto;}
+            .gnb { width: 100%; position:absolute; bottom: 8%;}
+            .gnb li { width: 25%;}
+            .gnb a { font-size: 35px;}
+            .se_btn { display: none;}
+            .search { display: none;}
+            /* 슬라이드 */
+            .vs { width: 100%;}
+            .btn_box1 { display: none;}
+            .btn_box2 { display: none;}
+            /* page2 */
+            .page_tit { font-size: 45px; float: left; margin-top: 75px; margin-left: 40px;}
+            h4 { margin-top: 100px; margin-left: 15px; float: left; font-size: 30px; margin-bottom: 10%;}
+            .im_box { width: 90%; margin: 00px auto; clear: both;}
+            .im_box li { width: 30%; height: 200px;  float: left; position: relative; margin-bottom: 20%; margin-left: 20px;}
+            .im_box img { width: 100%; height: 100%;}
+            .im_box h5 { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; margin-top: 10px;}
+            .im_box p { display: block; margin-top: 10px; font-size: 12px;}
+            /* page3 */
+            #page3 { height: 100vh; position: relative; overflow: hidden;}
+            .intro { width: 80%; overflow: hidden; margin: 0px auto; }
+            .intro_box { width: 400%;}
+            .intro_box li { float: left; margin-left: 1%; width: 11%;}
+            .intro_box img { width: 100%;}
+            .btn { position: absolute; width: 100%; top: 50%; left: 0;}
+            .btn li { float: left; width: 10%;}
+            .btn .lt_btn { transform: rotate(180deg);}
+            .btn .rt_btn { float: right;}
+            .btn img { height: 50px;}
+            /* page4 */
+            video { width: 80%; margin-left: 10%;}
+            .tb { width: 80%; margin-left: 10%; table-layout: fixed; height: 300px;}
+            td { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+            .col1 { width: 80%;}
+            .col2 { width: 20%;}
+            /* 푸터영역 */
+            #ft { margin-top: 100px;}
+        }
+        @media screen and (min-width: 1025px){
+            #page2, #page3, #page4 { overflow: hidden;}
+            #hd {height: 25%;}
+            .tnb { height: 13%; background-color: #83b7ff; overflow: hidden;}
+            .tnb ul { float: right; margin-right: 15%; width: 15%;}
+            .tnb li { float: left; width: 33.33333%; height: 100%; position: relative;}
+            .tnb li::after { content: "|"; display: block; position: absolute; top: 25%; right: 25%; color: #fff; opacity: 0.7;}
+            .tnb li:last-child::after { display: none;}
+            .tnb a { display: block; line-height: 33px; color: #fff; opacity: 0.5; font-size: 15px;}
+            .tnb a:hover { opacity: 1;}
+            .logo {  width: 15%; margin-top: 10px; margin-left: 15%; float: left;}
+            .gnb { width: 30%; height: 40px; margin: 18px 38%;}
+            .gnb li { width: 25%; height: 40px;}
+            .gnb a { font-size: 28px; line-height: 45px;}
+            .se_btn { display: block; position: absolute; width: 30px; height: 30px; right: 17%; top: calc( 13% + 23px); cursor: pointer;}
+            .se_btn img { width: 100%;}
+            .search { width: 0; height: 40px; background-color: #83b7ff; border-radius: 40px; position: absolute; right: 16%; top: calc( 13% + 20px); overflow: hidden; transition: 0.3s;}
+            input[type="text"] { display: block; width: 83%; height: 40px; float: left; text-indent: 20px; font-family: "ridi"; font-size: 18px; color: #fff;}
+            input[type="submit"] { display: block; width: 30px; height: 40px; background-image: url("./data/search_btn.png"); background-size: 30px 30px; background-repeat: no-repeat; background-position: center center; text-indent: 9999px;}
+            #ck:checked ~ .search { width: 14%;}
+            /* page1 */
+            #page1 { height: 50vh;}
+            #page1::before { content: ""; display: block; width: 70%; height: 1px; background-color: #ddd; position: absolute; bottom: 0; left: 15%;}
+            /* 슬라이드 */
+            .vs { width: 50%; height: 90%; position: absolute; top: -20%; left: 25%; border-radius: 40px; box-shadow: 2px 2px 5px #333;}
+            .btn_box1 { width: 70%; margin:5% 15%; float: left;}
+            .btn_box1 li { float: left; width: 5%; cursor: pointer;}
+            .btn_box1 li:first-child { transform: rotate(180deg);}
+            .btn_box1 li:last-child { float: right;}
+            .btn_box1 img { width: 50px; margin: 0 auto; display: block;}
+            .btn_box2 { width: 20%;  margin-left: 43%; bottom: 18%;}
+            /* page2 */
+            #page2 { height: 80vh; position: relative;}
+            #page2::after { content: ""; display: block; width: 70%; height: 1px; background-color: #ddd; position: absolute; bottom: 0; left: 15%;}
+            .page_tit { font-size: 60px; margin-top: 5%; margin-left: 15%; float: left; line-height: 100px;}
+            .page_tit::before { content: ""; display: block; width: 100px; height: 10px; background-color: #6292d4; margin-bottom: 20px;}
+            h4 { clear: both; margin-left: 15%; font-size: 30px; float: left;}
+            .im_box { width: 55%; position: absolute; right: 14%; top: 10%;}
+            .im_box li { width: 30%; height: 250px; float: left; margin-left: 30px; margin-bottom: 10%; border-radius: 10px; overflow: hidden; position: relative; transition: 0.5s; cursor: pointer;}
+            .im_box li::before { content: ""; display: block; position: absolute; width: 100%; height: 30%; bottom: 0; background-color: #333;}
+            .im_box li:hover { transform: scale(0.9);}
+            .im_box img { width: 100%; height: 100%;}
+            .im_box h5 { position: absolute; top: 75%; left: 5%; color: #fff; text-align: center; width: 90%;}
+            .im_box p { position: absolute; top: 90%; display: block; width: 30%; left: 35%; color: #fff;}
+            /* page3 */
+            #page3 { height: 55vh; position: relative;}
+            #page3::after { content: ""; display: block; width: 70%; height: 1px; background-color: #ddd; position: absolute; bottom: 0; left: 15%;}
+            .intro_box { width: 50%; position: absolute; right: 15%; top: 10%;}
+            .intro_box li { float: left; width: 15%; margin-left: 5%; cursor: pointer; transition: 0.5s;}
+            .intro_box li:hover { transform: scale(0.8);}
+            .intro_box img { width: 100%;}
+            .btn { display: none;}
+            /* page4 */
+            #page4 { height: 60vh;}
+            #page4 .page_tit { margin-left: 0;}
+            #page4 h4 { margin-left: 0; margin-bottom: 20px;}
+            .video { width: 25%; margin-left: 15%; float: left;}
+            video { clear: both; display: block; width: 100%; margin-top: 20%;}
+            .notice { width: 35%; margin-right: 14%; float: right;}
+            .tb { width: 100%; height: 250px;}
+            .col1 { cursor: pointer;}
+            .col1:hover { text-decoration: underline;}
+        }

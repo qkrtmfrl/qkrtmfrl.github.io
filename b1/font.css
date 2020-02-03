@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@font-face {
+    font-family : "black";
+    src:local("SCDream7"), url("./font/SCDream7.otf") format("opentype"), url("./font/SCDream7.eot") format("embedded-opentype"), url("./font/SCDream7.woff") format("woff")
+}
+
+@font-face {
+    font-family : "ridi";
+    src:local("RIDIBatang"), url("./font/RIDIBatang.otf") format("opentype"), url("./font/RIDIBatang.eot") format("embedded-truetype"), url("./font/RIDIBatang.woff") format("woff")
+}
