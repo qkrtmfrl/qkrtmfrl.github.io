@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*        메인 영역*/
+        #con { min-width: 100%;  position: relative;}
+/*        page1*/
+        #page1 { min-width: 100vw; min-height: 100vh; position: relative;}
+        .vs { min-width: 100vw; height: 100vh; overflow: hidden;}
+        .vs video { display: block; width: 100%; min-height: 100%; }
+        .page_wrap { min-width: 700px; position: absolute; top: 40%; left:28%;}
+        .page_tit { min-width: 300px; height: 100px; margin: 0 auto; color: #fff; text-shadow: 2px 2px 5px #333; font-family: "mungjo"; font-size: 100px; line-height: 100px; text-align: center; letter-spacing: 5px; margin-bottom: 50px;}
+        #frm1 { min-width: 600px; height: 60px; border: 2px solid #999; border-radius: 5px; background-color: rgba(0,0,0,0.5);}
+        .search { width: 630px; height: 60px; text-indent: 15px; font-size: 20px;}
+        .search_btn { width: 60px; height: 60px; background-image: url("./date/search_btn.png"); background-size: 40px 40px; background-repeat: no-repeat; background-position: center; overflow: hidden; text-indent: 999px; cursor: pointer;}
+/*        page2*/
+        #page2 { min-width: 100vw; min-height: 100vh;  position: relative; overflow: hidden; background-image: url("./date/page2_backgroundimage.jpg"); background-attachment: fixed; background-repeat: no-repeat; background-size: cover;}
+        .page_logo { display: block; color: #fff; font-family: "mungjo"; font-size: 35px; text-align: center; letter-spacing: 5px; position: absolute; top: 50px; left: 45%;}
+        #frm2 { width: 400px; height: 50px; float: right; margin-right: 15%; margin-top: 50px; overflow: hidden;}
+        .seach_box { display: block; width: 350px; height: 40px; text-indent: 10px; float: left; transition: 0.5s;  border-bottom: 3px solid #fff; font-size: 20px; color: #fff;}
+        .seach_btn2 { display: block; width: 50px; height: 50px; overflow: hidden; text-indent: 999px; background-image: url("./date/search_btn.png"); background-repeat: no-repeat; background-size: 40px 40px; cursor: pointer;}
+        .page_wrap2 { max-width: 70%; height: 100%;  margin: 12% auto 0 auto; background-color: #fff;}
+        .page_tit2 { text-align: center; line-height: 100px; font-size: 50px; }
+        .page_wrap2 ul { width: 80%; height: 80%; margin: 0 auto; overflow: hidden;}
+        .page_wrap2 li { width: 29%; height: 280px; float: left; margin-left: 35px; margin-bottom: 30px; overflow: hidden; box-sizing: border-box;}
+        .page_wrap2 li:hover { border: 3px solid #141784;}
+        .page_wrap2 .n_item1 a { display: block; width: 100%; height: 100%; background-image: url("./date/photo new1.jpg"); background-position: center;}
+        .page_wrap2 .n_item2 a { display: block; width: 100%; height: 100%; background-image: url("./date/photo news2.Jpg"); background-position: center;}
+        .page_wrap2 .n_item3 a { display: block; width: 100%; height: 100%; background-image: url("./date/photo news4.jpg"); background-position: center;}
+        .page_wrap2 .n_item4 a { display: block; width: 100%; height: 100%; background-image: url("./date/photo news3.jpg"); background-position: center;}
+        .page_wrap2 .col4 { width: 61%; background-color: #ddd; }
+        .con_tit { color: #141784; font-size: 17px; text-decoration: underline;  line-height: 50px; text-indent: 20px; text-shadow: 2px 2px 3px #fff; }
+        .con_tit2 { color: #333; font-size: 25px; margin-left: 20px; text-shadow: 2px 2px 3px #fff;}
+        .page_wrap2 .col4 .con_tit2 { margin: 10px 20px;}
+        .page_wrap2 p { display: block; color: #333; margin-top: 10px; margin-left: 20px; text-shadow: 2px 2px 3px #fff;}
+        .page_wrap2 span { display: block; color: #333; font-size: 13px; margin-left: 20px; margin-top: 80px; text-shadow: 2px 2px 3px #fff;}
+        .page_wrap2 .n_item2 span { margin-top: 125px;}
+        .page_wrap2 .n_item3 span { margin-top: 105px;}
+        .page_wrap2 .n_item4 span { margin-top: 105px;}
+        .page_wrap2 .col4 img { display: block; width: 21%; margin-left: 20px; margin-top: 10px; float: left;}
+        
+/*        page3*/
+        #page3 { min-width: 100vw; height: 100vh; overflow: hidden; position: relative; background-image: url("./date/page2_backgroundimage.jpg"); background-attachment: fixed; background-size: cover; background-repeat: no-repeat; clear: both;}
+        .page_wrap3 { max-width: 70%; height: 50%; overflow: hidden; background-color: #fff; margin: 10% auto 0 auto;}
+        .slide { width: 80%; height: 80%; margin: 15px auto; overflow: hidden; position: relative;}
+        .img_box { width: 400%;}
+        .img_box li { width: 25%; height: 100%; float: left;}
+        .img_box img { display: block; width: 500px; margin-top: 70px; margin-left: 40px; float: left;}
+        .img_box .sd_tit { text-indent: 20px; margin-top: 70px; font-size: 30px;}
+        .img_box .sd_con { display: block; width: 480px; float: left; margin-left: 20px; margin-top: 10px; line-height: 20px; font-size: 13px;}
+        .more { display: block; width: 100px; height: 35px; float: left; margin-left: 20px; border: 1px solid #333; margin-top: 20px; text-align: center; line-height: 35px; color: #333; transition: 0.3s;}
+        .more:hover { background-color : #141784; color: #fff;}
+        .btn_box { position: absolute; width: 400px; height: 10px; top: 340px; left: 560px; clear: both;}
+        .btn_box li { position: absolute; width: 100px; height: 10px;}
+        .btn_box .b_item1 { left: 0;}
+        .btn_box .b_item2 { left: 110px;}
+        .btn_box .b_item3 { left: 220px;}
+        .btn_box li .on { background-color: #141784;}
+        .btn_box button { position: absolute; width: 100px; height: 10px; background-color: #ddd;}
+        .ico_box { max-width: 70%; height: 13%; background: #fff; margin: 70px auto 0 auto;}
+        .ico_box li { width: 50%; height: 100%; float: left;}
+        .ico_box a { display: block; font-size: 30px; text-align: center; line-height: 120px; color: #333; position: relative;}
+        .ico_box .i_item1 a::before { content: ""; display: block; width: 30px; height: 30px; background-image: url("./date/place_icon.png"); position: absolute; background-size: 30px 30px; left: 200px; top: 45px;}
+        .ico_box .i_item2 a::before { content: ""; display: block; width: 30px; height: 30px; background-image: url("./date/telephone_icon.png"); position: absolute; background-size: 30px 30px; left: 200px; top: 45px;}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta name="description" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="title" content="MUJU">
+    <meta property="keywords" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="description" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="image" content="./date/muju_icon.png">
+    <link rel="icon" href="./date/muju_icon.png" type="image/png">
+    <link rel="stylesheet" href="./font.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./main.js"></script>
+    <title>MUJU</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        body, html { width: 100vw; font-family: "gothic"; overflow-x: hidden; position: relative;}
+        ul { list-style: none;}
+        a { text-decoration: none;}
+        input, button, label { border: 0; outline: 0; background-color: transparent;}
+        
+/*        헤더영역*/
+        #hd { min-width: 100vw; position: relative;}
+        .tnb { min-width: 100vw; height: 40px; background-color: rgba(0,0,0,0.3); position: fixed; z-index: 999;}
+        .tnb ul { float: right; margin-right: 15%;}
+        .tnb li { float: left; margin-left: 40px;}
+        .tnb a { display: block; line-height: 40px; color: #fff; font-weight: bold; position: relative;}
+        .tnb a::before { content: ""; display: block; width: 1px; height: 10px; background-color: #fff; position: absolute; top: 15px; left: -20px;}
+        .t_item1 a::before { display: none;}
+        .tnb a:hover { color: #141784;}
+        .tit { min-width: 100vw; height: 120px; background-color: rgba(0,0,0,0.7); position: fixed; z-index: 9;}
+        .page_logo { display: block; color: #fff; font-family: "mungjo"; font-size: 35px; text-align: center; letter-spacing: 5px; position: absolute; top: 50px; left: 45%; z-index: 9;}
+        #frm2 { width: 400px; height: 50px; float: right; margin-right: 15%; margin-top: 50px; overflow: hidden; }
+        .seach_box { display: block; width: 350px; height: 40px; text-indent: 10px; float: left; transition: 0.5s;  border-bottom: 3px solid #fff; font-size: 20px; color: #fff;}
+        .seach_btn2 { display: block; width: 50px; height: 50px; overflow: hidden; text-indent: 999px; background-image: url("./date/search_btn.png"); background-repeat: no-repeat; background-size: 40px 40px; cursor: pointer;}
+        .menu_btn { display: block; width: 40px; height: 40px; position: fixed; top: 50px; left: 15%; cursor: pointer; z-index: 99;}
+        .menu_btn span { display: block; width: 40px; height: 5px; background-color: #fff; margin-top: 8px; box-shadow: 2px 2px 5px #333;}
+        .menu_btn span:last-child { width: 20px;}
+        #ck1 { display: none;}
+        #ck1:checked ~ .gnb { left: 0;}
+        .gnb { position: fixed; width: 400px; height: 100vh; background: #fff; top: 0; left: -400px; transition: 0.1s; z-index: 999;}
+        .close_btn { display: block; width: 30px; height: 30px; float: right; margin-top: 20px; margin-right: 20px; cursor: pointer; position: relative;}
+        .close_btn span { display: block; width: 2px; height: 30px; transform: rotate(45deg); background: #000;}
+        .close_btn span:last-child { transform: rotate(-45deg); position: absolute; top: 0;}
+        .main { width: 200px; margin: 150px auto 100px auto;}
+        .main li { width: 200px; height: 70px; }
+        .main a { display: block; text-align: center; line-height: 70px; font-size: 35px; color: #333; font-weight: bolder;}
+        .main a:hover { color: #141784;  border-bottom: 3px solid #141784;}
+        .sub { width: 100px; margin: 0 auto;}
+        .sub li { width: 100px; height: 35px; margin-top: 10px;}
+        .sub a { display: block; text-align: center; line-height: 35px; font-size: 23px; color: #141784;}
+        .sub a:hover { text-decoration: underline;}
+        .sub2 { width: 330px; margin: 200px auto;}
+        .sub2 li { width: 148px; float: left;}
+        .sub2 li:first-child { border-right: 1px solid #ddd;}
+        .sub2 li:last-child { margin-left: 10px;}
+        .sub2 a { display: block; color: #333; text-align: center;}
+/*        메인영역*/
+        #con { min-width: 100vw; height: 180vh; overflow: hidden; position: relative; }
+        #con::after { content: ""; display: block; width: 100vw; height: 180vh; position: absolute; background-image: url("./date/page2_backgroundimage.jpg"); background-repeat: no-repeat; background-size: cover; top: 0; left: 0; z-index: -9; opacity: 0.7;}
+        .wrap { width: 40%; height: 70%; margin-left: 30%; margin-top: 250px; border-radius: 5px; background-color: #fff;}
+        .wrap img { float: left; width: 230px; margin-top: 65px; margin-left: 35%; display: block;}
+        .fr { clear: both; float: left; width: 60%; margin-top: 50px; margin-left: 20%;}
+        .page_tit { color: #333; font-family: "mungjo"; margin-bottom: 20px; font-size: 40px;}
+        .page_tit:after { content: ""; display: block; width: 150px; height: 3px; background-color: #333;}
+        .id { display: block; width: 100%; height: 50px; border: 3px solid #141784; border-radius: 10px; text-indent: 20px; box-sizing: border-box;}
+        .pw { display: block; width: 100%; height: 50px; border: 3px solid #141784; border-radius: 10px; margin-top: 10px; text-indent: 20px; box-sizing: border-box;}
+        .go { display: block; width: 100%; height: 50px; background: #141784; border-radius: 10px; margin-top: 20px; color: #fff; font-family: "gothic"; font-size: 20px; letter-spacing: 10px; cursor: pointer;}
+        #kr { display: block; margin-top: 20px; margin-left: 10px; float: left;}
+        .fr label { cursor: pointer; display: block; float: left; margin-top: 18px; margin-left: 10px;}
+        .fr a { display: block; margin-left: 20px; margin-top: 18px; float: left; color: #333;}
+        .fr a:hover { text-decoration: underline;}
+        .join { clear: both; float: left; width: 60%; margin-top: 50px; margin-left: 20%;}
+        .join input { display: block; width: 100%; height: 50px; border: 3px solid #141784; border-radius: 10px; margin-top: 20px; text-indent: 20px;  box-sizing: border-box; }
+        .get { border: none; background-color: #141784; color: #fff; font-family: "gothic"; font-size: 20px; letter-spacing: 10px; cursor: pointer; }
+        
+/*        푸터영역*/
+        #ft { min-width: 100vw; height: 100px; background-color: #333;}
+        .fnb { width: 400px; height: 100px; float: left; margin-left: 300px;}
+        .fnb li { width: 100px; float: left; }
+        .fnb a { display: block; text-align: center; line-height: 100px; color: #ddd;}
+        .copyright { display: block; float: right; margin-right: 300px; color: #ddd; line-height: 100px;}
+    </style>    
+</head>
+<body>
+    <header id="hd">
+        <nav class="tnb">
+            <ul>
+                <li class="t_item1"><a href="./index.html">main</a></li>
+                <li class="t_item2"><a href="./lojo.html">login</a></li>
+                <li class="t_item3"><a href="./lojo.html">join</a></li>
+            </ul>
+        </nav>
+        <div class="tit">
+            <h3 class="page_logo">MUJU</h3>
+            <form action="" id="frm2">
+               <input type="text" class="seach_box">
+               <input type="submit" class="seach_btn2">
+            </form>
+        </div>
+        <input type="checkbox" id="ck1">
+        <label for="ck1" class="menu_btn">
+            <span></span>    
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="gnb">
+            <label for="ck1" class="close_btn">
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="main">
+                <li class="g_item1"><a href="./sub1.html">무주소개</a></li>
+                <li class="g_item2"><a href="./sub2.html">무주관광</a></li>
+                <li class="g_item3"><a href="./sub3.html">무주소식</a></li>
+                <li class="g_item4"><a href="./sub4.html">무주축제</a></li>
+            </ul>
+            <ul class="sub">
+                <li class="gs_item1"><a href="./index.html">main</a></li>
+                <li class="gs_item2"><a href="./lojo.html">login</a></li>
+                <li class="gs_item3"><a href="./lojo.html">join</a></li>
+            </ul>
+            <ul class="sub2">
+                <li class="gb_item1"><a href="./palce.html">무주군청위치</a></li>
+                <li class="gb_item2"><a href="./palce.html">무주군청전화번호</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main id="con">
+        <div class="wrap">
+            <img src="./date/muju_icon.png" alt="무주아이콘">
+            <form action="" class="fr">
+                <h1 class="page_tit">LOGIN</h1>
+                <input type="text" placeholder="아이디를 입력해주세요" class="id">
+                <input type="password" placeholder="패쓰워드를 입력해주세요" class="pw">
+                <input type="submit" class="go" value="로그인">
+                <input type="checkbox" id="kr">
+                <label for="kr">아이디 저장</label>
+                <a href="" class="idfind">아이디/비밀번호 찾기 &gt;</a>
+            </form>
+            <form action="" class="join">
+                <h1 class="page_tit">JOIN</h1>
+                <input type="text" placeholder="사용하실 아이디를 입력해주세요">
+                <input type="password" placeholder="사용하실 비밀번호를 입력해주세요">
+                <input type="password" placeholder="비밀번호 확인">
+                <input type="text" placeholder="이름을 입력해주세요">
+                <input type="text" placeholder="생년월일을 입력해주세요">
+                <input type="text" placeholder="전화번호를 '-'를 제외하고 입력해주세요">
+                <input type="submit" class="get" value="회원가입">
+            </form>
+        </div>
+    </main>    
+    <footer id="ft">
+        <nav class="fnb">
+            <ul>
+                <li class="f_item1"><a href="./sub1.html">무주소개</a></li>
+                <li class="f_item2"><a href="./sub2.html">무주관광</a></li>
+                <li class="f_item3"><a href="./sub3.html">무주소식</a></li>
+                <li class="f_item4"><a href="./sub4.html">무주축제</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">&copy; 2019 MUJU. All Rights Reserved.</p>
+    </footer>
+    <a href="#" class="totop"></a>
+</body>
+</html>

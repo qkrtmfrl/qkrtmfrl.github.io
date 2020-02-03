@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta name="description" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="title" content="MUJU">
+    <meta property="keywords" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="description" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="image" content="./date/muju_icon.png">
+    <link rel="icon" href="./date/muju_icon.png" type="image/png">
+    <link rel="stylesheet" href="./font.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./main.js"></script>
+    <title>MUJU</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        body, html { width: 100vw; font-family: "gothic"; overflow-x: hidden; position: relative;}
+        ul { list-style: none;}
+        a { text-decoration: none;}
+        input, button, label { border: 0; outline: 0; background-color: transparent;}
+        
+/*        헤더영역*/
+        #hd { min-width: 100vw; position: relative;}
+        .tnb { min-width: 100vw; height: 40px; background-color: rgba(0,0,0,0.3); position: fixed; z-index: 999;}
+        .tnb ul { float: right; margin-right: 15%;}
+        .tnb li { float: left; margin-left: 40px;}
+        .tnb a { display: block; line-height: 40px; color: #fff; font-weight: bold; position: relative;}
+        .tnb a::before { content: ""; display: block; width: 1px; height: 10px; background-color: #fff; position: absolute; top: 15px; left: -20px;}
+        .t_item1 a::before { display: none;}
+        .tnb a:hover { color: #141784;}
+        .tit { min-width: 100vw; height: 120px; background-color: rgba(0,0,0,0.7); position: fixed; z-index: 9;}
+        .page_logo { display: block; color: #fff; font-family: "mungjo"; font-size: 35px; text-align: center; letter-spacing: 5px; position: absolute; top: 50px; left: 45%; z-index: 9;}
+        #frm2 { width: 400px; height: 50px; float: right; margin-right: 15%; margin-top: 50px; overflow: hidden; }
+        .seach_box { display: block; width: 350px; height: 40px; text-indent: 10px; float: left; transition: 0.5s;  border-bottom: 3px solid #fff; font-size: 20px; color: #fff;}
+        .seach_btn2 { display: block; width: 50px; height: 50px; overflow: hidden; text-indent: 999px; background-image: url("./date/search_btn.png"); background-repeat: no-repeat; background-size: 40px 40px; cursor: pointer;}
+        .menu_btn { display: block; width: 40px; height: 40px; position: fixed; top: 50px; left: 15%; cursor: pointer; z-index: 99;}
+        .menu_btn span { display: block; width: 40px; height: 5px; background-color: #fff; margin-top: 8px; box-shadow: 2px 2px 5px #333;}
+        .menu_btn span:last-child { width: 20px;}
+        #ck1 { display: none;}
+        #ck1:checked ~ .gnb { left: 0;}
+        .gnb { position: fixed; width: 400px; height: 100vh; background: #fff; top: 0; left: -400px; transition: 0.1s; z-index: 999;}
+        .close_btn { display: block; width: 30px; height: 30px; float: right; margin-top: 20px; margin-right: 20px; cursor: pointer; position: relative;}
+        .close_btn span { display: block; width: 2px; height: 30px; transform: rotate(45deg); background: #000;}
+        .close_btn span:last-child { transform: rotate(-45deg); position: absolute; top: 0;}
+        .main { width: 200px; margin: 150px auto 100px auto;}
+        .main li { width: 200px; height: 70px; }
+        .main a { display: block; text-align: center; line-height: 70px; font-size: 35px; color: #333; font-weight: bolder;}
+        .main a:hover { color: #141784;  border-bottom: 3px solid #141784;}
+        .sub { width: 100px; margin: 0 auto;}
+        .sub li { width: 100px; height: 35px; margin-top: 10px;}
+        .sub a { display: block; text-align: center; line-height: 35px; font-size: 23px; color: #141784;}
+        .sub a:hover { text-decoration: underline;}
+        .sub2 { width: 330px; margin: 200px auto;}
+        .sub2 li { width: 148px; float: left;}
+        .sub2 li:first-child { border-right: 1px solid #ddd;}
+        .sub2 li:last-child { margin-left: 10px;}
+        .sub2 a { display: block; color: #333; text-align: center;}
+/*        메인영역*/
+        #con { min-width: 100vw; overflow: hidden; position: relative;}
+        .page_ban { min-width: 100vw; height: 500px; overflow: hidden; position: relative;}
+        .bread { position: absolute; top: 150px; color: #fff; right: 300px; z-index: 9; text-shadow: 2px 2px 5px #333;}
+        .page_ban img { width: 100vw; margin-top: -300px; opacity: 0.8;}
+        .page_tit { position: absolute; top: 45%; left: 38%; color: #fff; font-size: 48px; text-shadow: 5px 5px 5px #333; z-index: 10;}
+        .page_tit2 { position: absolute; top: 58%; left: 44%; color: #fff; font-size: 30px; text-shadow: 5px 5px 5px #333; z-index: 10;}
+        .btn { max-width: 1000px; height: 100px; margin: 80px auto 0 auto;}
+        .btn li { width: 250px; height: 100px; float: left; border-top: 2px dashed #ddd; border-bottom: 1px solid #333; position: relative;}
+        .btn label { display: block; text-align: center; line-height: 100px; font-size: 23px; cursor: pointer; }
+        .btn li:before { content: ""; display: block; width: 250px; height: 3px; position: absolute; background-color: #333; top: -2px;  transition: 0.5s; transform-origin:center; transform: scale(0);}
+        .btn lI:hover::before { transform: scale(1);}
+        .btn li:after { content: ""; display: block; width: 250px; height: 3px; position: absolute; background-color: #141784; bottom: 0px;  transition: 0.5s; transform-origin:center; transform: scale(0);}
+        .btn lI:hover::after { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1:before { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1:after { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1 label { color: #141784; }
+        #ra1:checked ~ #page1 { display: block;}
+        #ra2:checked ~ .btn .bt_item2:before { transform: scale(1);}
+        #ra2:checked ~ .btn .bt_item2:after { transform: scale(1);}
+        #ra2:checked ~ .btn .bt_item2 label { color: #141784; }
+        #ra2:checked ~ #page2 {display: block;}
+        #ra3:checked ~ .btn .bt_item3:before { transform: scale(1);}
+        #ra3:checked ~ .btn .bt_item3:after { transform: scale(1);}
+        #ra3:checked ~ .btn .bt_item3 label { color: #141784;}
+        #ra3:checked ~ #page3 { display: block;}
+        #ra4:checked ~ .btn .bt_item4:before { transform: scale(1);}
+        #ra4:checked ~ .btn .bt_item4:after { transform: scale(1);}
+        #ra4:checked ~ .btn .bt_item4 label { color: #141784;}
+        #ra4:checked ~ #page4 { display: block;}
+        .rao { display: none;}
+        
+/*        page*/
+        #page1, #page2, #page3, #page4 { min-width: 100vw; height: 100%; overflow: hidden; display: none; margin-top: 80px;}
+        .p_tit { width: 800px; height: 50px; float: left; margin-left: 15%;}
+        .page_name { color: #141784; font-size: 50px; font-family: "mungjo"; float: left; margin-right: 30px; position: relative;}
+        .p_tit img { display: block; width: 50px; height: 50px;}
+        .page_name::after { content: ""; display: block; min-width: 500px; height: 3px; background-color: #141784; position: absolute; top: 60px; left: 0px;}
+        .img_con { clear: both; max-width: 70%; overflow: hidden; margin-left: 15%; margin-top: 100px;}
+        .img_con li { float: left; width: 30%; overflow: hidden; margin-left: 20px; margin-top: 80px; position: relative;}
+        .img_con img { width: 100%; transition: 0.5s;}
+        .img_tit { position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); top: 0; left: 0; color: #fff; font-size: 25px; text-align: center; line-height: 250px; display: none; transition: 0.5s;}
+        .mor { position: absolute; top: 60%; left: 38%; color: #fff; width: 100px; height: 40px; text-align: center; line-height: 40px; border: 1px solid #fff; display: none; transition: 0.5s;}
+        .mor:hover { background-color: rgba(255,255,255,0.7); color: #333;}
+        .img_con li:hover img { transform: scale(2);}
+        .img_con li:hover .img_tit { display: block;}
+        .img_con li:hover .mor { display: block;}
+        .ck { display: none;}
+/*        page2*/
+        #page2 .img_tit { line-height: 200px;}
+        #page2 .mor { top: 60%;}
+        
+/*        page3*/
+        .cho_box { max-width: 1000px; height: 80px; border: 3px solid #141784; border-radius: 10px; margin: 0px auto 100px auto;}
+        .cho_box li { float: left; width: 33%;}
+        .cho_box label { display: block; text-align: center; line-height: 80px; font-size: 20px; cursor: pointer; position: relative;}
+        .cho_box label::before { content: ""; display: none; width: 20px; height: 20px; background-image: url("./date/check.png"); position: absolute; background-size: 20px 20px; top: 32%; left: 35%; }
+        #cj1:checked ~ #mon { display: block;}
+        #cj1:checked ~ .cho_box .ch_item1 label { color: #141784;}
+        #cj1:checked ~ .cho_box .ch_item1 label::before { display: block;}
+        #ck2:checked ~ .val { display: block;}
+        #ck2:checked ~ .cho_box .ch_item2 label { color: #141784;}
+        #ck2:checked ~ .cho_box .ch_item2 label::before { display: block;}
+        #ck3:checked ~ .fal { display: block;}
+        #ck3:checked ~ .cho_box .ch_item3 label { color: #141784;}
+        #ck3:checked ~ .cho_box .ch_item3 label::before { display: block;}
+        #mon { display: none;}
+        .val { display: none;}
+        .fal { display: none;}
+        
+/*        푸터영역*/
+        #ft { min-width: 100vw; height: 100px; background-color: #333; margin-top: 200px;}
+        .fnb { width: 400px; height: 100px; float: left; margin-left: 300px;}
+        .fnb li { width: 100px; float: left; }
+        .fnb a { display: block; text-align: center; line-height: 100px; color: #ddd;}
+        .copyright { display: block; float: right; margin-right: 300px; color: #ddd; line-height: 100px;}
+    </style>    
+</head>
+<body>
+    <header id="hd">
+        <nav class="tnb">
+            <ul>
+                <li class="t_item1"><a href="./index.html">main</a></li>
+                <li class="t_item2"><a href="./lojo.html">login</a></li>
+                <li class="t_item3"><a href="./lojo.html">join</a></li>
+            </ul>
+        </nav>
+        <div class="tit">
+            <h3 class="page_logo">MUJU</h3>
+            <form action="" id="frm2">
+               <input type="text" class="seach_box">
+               <input type="submit" class="seach_btn2">
+            </form>
+        </div>
+        <input type="checkbox" id="ck1">
+        <label for="ck1" class="menu_btn">
+            <span></span>    
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="gnb">
+            <label for="ck1" class="close_btn">
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="main">
+                <li class="g_item1"><a href="./sub1.html">무주소개</a></li>
+                <li class="g_item2"><a href="./sub2.html">무주관광</a></li>
+                <li class="g_item3"><a href="./sub3.html">무주소식</a></li>
+                <li class="g_item4"><a href="./sub4.html">무주축제</a></li>
+            </ul>
+            <ul class="sub">
+                <li class="gs_item1"><a href="./index.html">main</a></li>
+                <li class="gs_item2"><a href="./lojo.html">login</a></li>
+                <li class="gs_item3"><a href="./lojo.html">join</a></li>
+            </ul>
+            <ul class="sub2">
+                <li class="gb_item1"><a href="./palce.html">무주군청위치</a></li>
+                <li class="gb_item2"><a href="./palce.html">무주군청전화번호</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main id="con">
+        <div class="page_ban">
+            <div class="bread">
+                <p>home &gt; 무주관광</p>
+            </div>
+            <img src="./date/sub_ban2.jpg" alt="배너">
+            <h1 class="page_tit">MUJU Tourism</h1>
+            <h3 class="page_tit2">무주관광</h3>
+        </div>
+        <input type="radio" name="ra" id="ra1" class="rao" checked>
+        <input type="radio" name="ra" id="ra2" class="rao">
+        <input type="radio" name="ra" id="ra3" class="rao">
+        <input type="radio" name="ra" id="ra4" class="rao">
+        <ul class="btn">
+            <li class="bt_item1"><label for="ra1">관광지</label></li>
+            <li class="bt_item2"><label for="ra2">구천동33경</label></li>
+            <li class="bt_item3"><label for="ra3">산/계곡/폭포</label></li>
+            <li class="bt_item4"><label for="ra4">전시관람</label></li>
+        </ul>
+        <div id="page1">
+            <div class="p_tit">
+                <h3 class="page_name">관광지</h3>
+                <img src="./date/sub_logo.png" alt="서브로고">
+            </div>
+            <ul class="img_con">
+                <li class="im_itme1">
+                    <img src="./date/tour_1.jpg" alt="관광지1">
+                    <h3 class="img_tit">내도리 강변 유원지</h3>
+                    <a href="" class="mor">more</a>
+                </li>
+                <li class="im_itme2">
+                    <img src="./date/tour_2.jpg" alt="관광지2">
+                    <h3 class="img_tit">무주 덕유산 리조트</h3>
+                    <a href="" class="mor">more</a>
+                </li>
+                <li class="im_itme3">
+                    <img src="./date/tour_3.jpg" alt="관광지3">
+                    <h3 class="img_tit">무주 구천동 관광단지</h3>
+                    <a href="" class="mor">more</a>
+                </li>
+                <li class="im_itme4">
+                    <img src="./date/tour_4.png" alt="관광지4">
+                    <h3 class="img_tit">무주양수발전소 홍보관</h3>
+                    <a href="" class="mor">more</a>
+                </li>
+                <li class="im_itme5">
+                    <img src="./date/tour_5.jpg" alt="관광지5">
+                    <h3 class="img_tit">무주 반딧불시장</h3>
+                    <a href="" class="mor">more</a>
+                </li>
+                <li class="im_itme6">
+                    <img src="./date/tour_6.png" alt="관광지6">
+                    <h3 class="img_tit">적상산 사고지</h3>
+                    <a href="" class="mor">more</a>
+                </li>
+            </ul>
+        </div>
+        <div id="page2">
+            <div class="p_tit">
+                <h3 class="page_name">구천동33경</h3>
+                <img src="./date/sub_logo.png" alt="서브로고">
+            </div>
+            <ul class="img_con">
+                <li class="im_item1">
+                    <img src="./date/mutu_1.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 1경 라제통문"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item2">
+                    <img src="./date/mutu_2.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 2경 은구암"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item3">
+                    <img src="./date/mutu_3.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 3경 청금대"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item4">
+                    <img src="./date/mutu_4.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 4경 와룡담"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item5">
+                    <img src="./date/mutu_5.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 5경 학소대"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item6">
+                    <img src="./date/mutu_6.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 6경 일사대"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item7">
+                    <img src="./date/mutu_7.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 7경 함벽소"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item8">
+                    <img src="./date/mutu_8.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 8경 가의암"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item9">
+                    <img src="./date/mutu_9.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 9경 추월담"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item10">
+                    <img src="./date/mutu_10.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 10경 만조탄"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item11">
+                    <img src="./date/mutu_11.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 11경 파회"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item12">
+                    <img src="./date/mutu_12.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 12경 수심대"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item13">
+                    <img src="./date/mutu_13.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 13경 세심대"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item14">
+                    <img src="./date/mutu_14.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 14경 수경대"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item15">
+                    <img src="./date/mutu_15.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 15경 월하탄"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item16">
+                    <img src="./date/mutu_16.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 16경 인월담"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item17">
+                    <img src="./date/mutu_17.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 17경 사자담"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item18">
+                    <img src="./date/mutu_18.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 18경 청류동"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item19">
+                    <img src="./date/mutu_19.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 19경 비파담"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item20">
+                    <img src="./date/mutu_20.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 20경 다연대"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item21">
+                    <img src="./date/mutu_21.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 21경 구월담"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item22">
+                    <img src="./date/mutu_22.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 22경 금포탄"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item23">
+                    <img src="./date/mutu_23.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 23경 호탄암"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item24">
+                    <img src="./date/mutu_24.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 24경 청류계"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item25">
+                    <img src="./date/mutu_25.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 25경 안심대"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item26">
+                    <img src="./date/mutu_26.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 26경 신양담"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item27">
+                    <img src="./date/mutu_27.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 27경 명경담"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item28">
+                    <img src="./date/mutu_28.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 28경 구천폭포"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item29">
+                    <img src="./date/mutu_29.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 29경 백련담"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item30">
+                    <img src="./date/mutu_30.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 30경 연화폭"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item31">
+                    <img src="./date/mutu_31.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 31경 이속대"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item32">
+                    <img src="./date/mutu_32.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 32경 백련사"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item33">
+                    <img src="./date/mutu_33.jpg" alt="구천동33경">
+                    <h3 class="img_tit">"제 33경 향적봉"</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+            </ul>
+        </div>
+        <div id="page3">
+           <input type="radio" id="cj1" class="ck" name="cj" checked>
+           <input type="radio" id="ck2" class="ck" name="cj">
+           <input type="radio" id="ck3" class="ck" name="cj">
+           <ul class="cho_box">
+               <li class="ch_item1"><label for="cj1">산</label></li>
+               <li class="ch_item2"><label for="ck2">계곡</label></li>
+               <li class="ch_item3"><label for="ck3">폭포</label></li>
+           </ul>
+            <div class="p_tit">
+                <h3 class="page_name">산/계곡/폭포</h3>
+                <img src="./date/sub_logo.png" alt="서브로고">
+            </div>
+            <div id="mon">
+                <ul class="img_con">
+                    <li class="im_item1">
+                        <img src="./date/mon_1.jpg" alt="산1">
+                        <h3 class="img_tit">대덕산</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                    <li class="im_item2">
+                        <img src="./date/mon_2.png" alt="산2">
+                        <h3 class="img_tit">덕유산</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                    <li class="im_item3">
+                        <img src="./date/mon_3.jpg" alt="산3">
+                        <h3 class="img_tit">민주지산</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                    <li class="im_item4">
+                        <img src="./date/mon_4.jpg" alt="산4">
+                        <h3 class="img_tit">삼봉산</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                    <li class="im_item5">
+                        <img src="./date/mon_5.png" alt="산5">
+                        <h3 class="img_tit">적상산</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                    <li class="im_item6">
+                        <img src="./date/mon_6.jpg" alt="산6">
+                        <h3 class="img_tit">조항산</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                    <li class="im_item7">
+                        <img src="./date/mon_7.jpg" alt="산7">
+                        <h3 class="img_tit">지장산</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="val">
+                <ul class="img_con">
+                    <li class="im_item1">
+                        <img src="https://tour.muju.go.kr/DATA/tour/9/thumb/t_20191028095736173_pSZuCJ.jpg" alt="계곡1">
+                        <h3 class="img_tit">구천동계곡</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                    <li class="im_item2">
+                        <img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_201611100500327689zG.jpg" alt="계곡2">
+                        <h3 class="img_tit">칠연계곡</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="fal">
+                <ul class="img_con">
+                    <li class="im_item1">
+                        <img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_20161205060405731FLA.jpg" alt="폭포1">
+                        <h3 class="img_tit">송대폭포</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                    <li class="im_item2">
+                        <img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_20161110045516769UZm.jpg" alt="폭포2">
+                        <h3 class="img_tit">용추폭포</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                    <li class="im_item3">
+                        <img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_20161205060532950vmz.jpg" alt="폭포3">
+                        <h3 class="img_tit">천일폭포</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                    <li class="im_item4">
+                        <img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_20161205060452321kpE.png" alt="폭포4">
+                        <h3 class="img_tit">칠연폭포</h3>
+                        <a href="" class="mor">"more"</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="page4">
+            <div class="p_tit">
+                <h3 class="page_name">전시관람</h3>
+                <img src="./date/sub_logo.png" alt="서브로고">
+            </div>
+            <ul class="img_con">
+                <li class="im_item1">
+                    <img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_20161205065608921E1s.png" alt="전시관람1">
+                    <h3 class="img_tit">무주 산골영화관</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item2">
+                    <img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_20161114101523102yNk.png" alt="전시관람2">
+                    <h3 class="img_tit">반디랜드</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+                <li class="im_item3">
+                    <img src="https://tour.muju.go.kr/DATA/tour/68/thumb/t_20190325031045787_qjLGUk.jpg" alt="전시관람3">
+                    <h3 class="img_tit">태권도원</h3>
+                    <a href="" class="mor">"more"</a>
+                </li>
+            </ul>
+        </div>
+    </main>    
+    <footer id="ft">
+        <nav class="fnb">
+            <ul>
+                <li class="f_item1"><a href="./sub1.html">무주소개</a></li>
+                <li class="f_item2"><a href="./sub2.html">무주관광</a></li>
+                <li class="f_item3"><a href="./sub3.html">무주소식</a></li>
+                <li class="f_item4"><a href="./sub4.html">무주축제</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">&copy; 2019 MUJU. All Rights Reserved.</p>
+    </footer>
+    <a href="#" class="totop"></a>
+</body>
+</html>

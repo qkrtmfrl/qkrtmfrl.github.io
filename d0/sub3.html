@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta name="description" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="title" content="MUJU">
+    <meta property="keywords" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="description" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="image" content="./date/muju_icon.png">
+    <link rel="icon" href="./date/muju_icon.png" type="image/png">
+    <link rel="stylesheet" href="./font.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./main.js"></script>
+    <title>MUJU</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        body, html { width: 100vw; font-family: "gothic"; overflow-x: hidden; position: relative;}
+        ul { list-style: none;}
+        a { text-decoration: none;}
+        input, button, label { border: 0; outline: 0; background-color: transparent;}
+        
+/*        헤더영역*/
+        #hd { min-width: 100vw; position: relative;}
+        .tnb { min-width: 100vw; height: 40px; background-color: rgba(0,0,0,0.3); position: fixed; z-index: 999;}
+        .tnb ul { float: right; margin-right: 15%;}
+        .tnb li { float: left; margin-left: 40px;}
+        .tnb a { display: block; line-height: 40px; color: #fff; font-weight: bold; position: relative;}
+        .tnb a::before { content: ""; display: block; width: 1px; height: 10px; background-color: #fff; position: absolute; top: 15px; left: -20px;}
+        .t_item1 a::before { display: none;}
+        .tnb a:hover { color: #141784;}
+        .tit { min-width: 100vw; height: 120px; background-color: rgba(0,0,0,0.7); position: fixed; z-index: 9;}
+        .page_logo { display: block; color: #fff; font-family: "mungjo"; font-size: 35px; text-align: center; letter-spacing: 5px; position: absolute; top: 50px; left: 45%; z-index: 9;}
+        #frm2 { width: 400px; height: 50px; float: right; margin-right: 15%; margin-top: 50px; overflow: hidden; }
+        .seach_box { display: block; width: 350px; height: 40px; text-indent: 10px; float: left; transition: 0.5s;  border-bottom: 3px solid #fff; font-size: 20px; color: #fff;}
+        .seach_btn2 { display: block; width: 50px; height: 50px; overflow: hidden; text-indent: 999px; background-image: url("./date/search_btn.png"); background-repeat: no-repeat; background-size: 40px 40px; cursor: pointer;}
+        .menu_btn { display: block; width: 40px; height: 40px; position: fixed; top: 50px; left: 15%; cursor: pointer; z-index: 99;}
+        .menu_btn span { display: block; width: 40px; height: 5px; background-color: #fff; margin-top: 8px; box-shadow: 2px 2px 5px #333;}
+        .menu_btn span:last-child { width: 20px;}
+        #ck1 { display: none;}
+        #ck1:checked ~ .gnb { left: 0;}
+        .gnb { position: fixed; width: 400px; height: 100vh; background: #fff; top: 0; left: -400px; transition: 0.1s; z-index: 999;}
+        .close_btn { display: block; width: 30px; height: 30px; float: right; margin-top: 20px; margin-right: 20px; cursor: pointer; position: relative;}
+        .close_btn span { display: block; width: 2px; height: 30px; transform: rotate(45deg); background: #000;}
+        .close_btn span:last-child { transform: rotate(-45deg); position: absolute; top: 0;}
+        .main { width: 200px; margin: 150px auto 100px auto;}
+        .main li { width: 200px; height: 70px; }
+        .main a { display: block; text-align: center; line-height: 70px; font-size: 35px; color: #333; font-weight: bolder;}
+        .main a:hover { color: #141784;  border-bottom: 3px solid #141784;}
+        .sub { width: 100px; margin: 0 auto;}
+        .sub li { width: 100px; height: 35px; margin-top: 10px;}
+        .sub a { display: block; text-align: center; line-height: 35px; font-size: 23px; color: #141784;}
+        .sub a:hover { text-decoration: underline;}
+        .sub2 { width: 330px; margin: 200px auto;}
+        .sub2 li { width: 148px; float: left;}
+        .sub2 li:first-child { border-right: 1px solid #ddd;}
+        .sub2 li:last-child { margin-left: 10px;}
+        .sub2 a { display: block; color: #333; text-align: center;}
+/*        메인영역*/
+        #con { min-width: 100vw; overflow: hidden; position: relative;}
+        #con { min-width: 100vw; overflow: hidden; position: relative;}
+        .page_ban { min-width: 100vw; height: 500px; overflow: hidden; position: relative;}
+        .bread { position: absolute; top: 150px; color: #fff; right: 300px; z-index: 9; text-shadow: 2px 2px 5px #333;}
+        .page_ban img { width: 100vw; margin-top: -300px; opacity: 0.8;}
+        .page_tit { position: absolute; top: 45%; left: 38%; color: #fff; font-size: 48px; text-shadow: 5px 5px 5px #333; z-index: 10;}
+        .page_tit2 { position: absolute; top: 58%; left: 44%; color: #fff; font-size: 30px; text-shadow: 5px 5px 5px #333; z-index: 10;}
+        .btn { max-width: 1000px; height: 100px; margin: 80px auto 0 auto;}
+        .btn li { width: 500px; height: 100px; float: left; border-top: 2px dashed #ddd; border-bottom: 1px solid #333; position: relative;}
+        .btn label { display: block; text-align: center; line-height: 100px; font-size: 23px; cursor: pointer; }
+        .btn li:before { content: ""; display: block; width: 500px; height: 3px; position: absolute; background-color: #333; top: -2px;  transition: 0.5s; transform-origin:center; transform: scale(0);}
+        .btn lI:hover::before { transform: scale(1);}
+        .btn li:after { content: ""; display: block; width: 500px; height: 3px; position: absolute; background-color: #141784; bottom: 0px;  transition: 0.5s; transform-origin:center; transform: scale(0);}
+        .btn lI:hover::after { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1:before { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1:after { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1 label { color: #141784; }
+        #ra1:checked ~ .page1 { display: block;}
+        #ra2:checked ~ .btn .bt_item2:before { transform: scale(1);}
+        #ra2:checked ~ .btn .bt_item2:after { transform: scale(1);}
+        #ra2:checked ~ .btn .bt_item2 label { color: #141784; }
+        #ra2:checked ~ .page2 {display: block;}
+        .rao { display: none;}
+        
+/*        page*/
+        .page1, .page2 { clear: both; min-width: 100vw; height: 100%; overflow: hidden; display: none; margin-top: 80px;}
+        .p_tit { width: 650px; height: 50px; float: left; margin-left: 15%; position: relative;}
+        .page_name { color: #141784; font-size: 50px; font-family: "mungjo"; float: left; margin-right: 30px; position: relative;}
+        .p_tit img { display: block; width: 50px; height: 50px;}
+        .page_name::after { content: ""; display: block; min-width: 650px; height: 3px; background-color: #141784; position: absolute; top: 60px; left: 0px;}
+        .p_tit a { display: block; position: absolute; right: 0; bottom: 0px; color: #333;}
+        .p_tit a:hover { text-decoration: underline;}
+        .img_con { clear: both; min-width: 70%; margin-left: 15%; margin-top: 100px; overflow: hidden;}
+        .img_con li { width: 20%; height: 400px; float: left; overflow: hidden; margin-left: 20px; box-sizing: border-box;}
+        .img_con li:hover { border: 3px solid #141784; }
+        .img_tit { text-align: center;}
+        .img_con p { display: block; text-align: center; margin-top: 20px;}
+        .img_con img { width: 100%; display: block;}
+        .page2 .img_con li { height: 500px;}
+        
+/*        푸터영역*/
+        #ft { min-width: 100vw; height: 100px; background-color: #333; margin-top: 200px;}
+        .fnb { width: 400px; height: 100px; float: left; margin-left: 300px;}
+        .fnb li { width: 100px; float: left; }
+        .fnb a { display: block; text-align: center; line-height: 100px; color: #ddd;}
+        .copyright { display: block; float: right; margin-right: 300px; color: #ddd; line-height: 100px;}
+    </style>    
+</head>
+<body>
+    <header id="hd">
+        <nav class="tnb">
+            <ul>
+                <li class="t_item1"><a href="./index.html">main</a></li>
+                <li class="t_item2"><a href="./lojo.html">login</a></li>
+                <li class="t_item3"><a href="./lojo.html">join</a></li>
+            </ul>
+        </nav>
+        <div class="tit">
+            <h3 class="page_logo">MUJU</h3>
+            <form action="" id="frm2">
+               <input type="text" class="seach_box">
+               <input type="submit" class="seach_btn2">
+            </form>
+        </div>
+        <input type="checkbox" id="ck1">
+        <label for="ck1" class="menu_btn">
+            <span></span>    
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="gnb">
+            <label for="ck1" class="close_btn">
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="main">
+                <li class="g_item1"><a href="./sub1.html">무주소개</a></li>
+                <li class="g_item2"><a href="./sub2.html">무주관광</a></li>
+                <li class="g_item3"><a href="./sub3.html">무주소식</a></li>
+                <li class="g_item4"><a href="./sub4.html">무주축제</a></li>
+            </ul>
+            <ul class="sub">
+                <li class="gs_item1"><a href="./index.html">main</a></li>
+                <li class="gs_item2"><a href="./lojo.html">login</a></li>
+                <li class="gs_item3"><a href="./lojo.html">join</a></li>
+            </ul>
+            <ul class="sub2">
+                <li class="gb_item1"><a href="./palce.html">무주군청위치</a></li>
+                <li class="gb_item2"><a href="./palce.html">무주군청전화번호</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main id="con">
+        <div class="page_ban">
+            <div class="bread">
+                <p>home &gt; 무주소식</p>
+            </div>
+            <img src="./date/sub_ban3.jpg" alt="배너">
+            <h1 class="page_tit">MUJU News</h1>
+            <h3 class="page_tit2">무주소식</h3>
+        </div>
+        <input type="radio" name="ra" id="ra1" class="rao" checked>
+        <input type="radio" name="ra" id="ra2" class="rao">
+        <ul class="btn">
+            <li class="bt_item1"><label for="ra1">포토뉴스</label></li>
+            <li class="bt_item2"><label for="ra2">반딧불소식지</label></li>
+        </ul>
+        <div class="page1">
+            <div class="p_tit">
+                <h3 class="page_name">포토뉴스</h3>
+                <img src="./date/sub_logo.png" alt="서브로고">
+                <a href="https://www.muju.go.kr">더 자세한 무주의 소식을 알고 싶다면? &gt;</a>
+            </div>
+            <ul class="img_con">
+                <li class="im_item1">
+                    <img src="./date/photo%20new1.jpg" alt="포토뉴스1">
+                    <h3 class="img_tit">제8회 무주군 이장 한마음체육대회</h3>
+                    <p class="date">2019-06-18</p>
+                </li>
+                <li class="im_item2">
+                    <img src="./date/photo%20news2.JPG" alt="포토뉴스2">
+                    <h3 class="img_tit">국가유공자 명패 달기</h3>
+                    <p class="date">2019-06-18</p>
+                </li>
+                <li class="im_item3">
+                    <img src="./date/photo%20news4.jpg" alt="포토뉴스3">
+                    <h3 class="img_tit">자활 생산품 장터</h3>
+                    <p class="date">2019-06-13</p>
+                </li>
+                <li class="im_item4">
+                    <img src="./date/photo%20news3.jpg" alt="포토뉴스4">
+                    <h3 class="img_tit">북 스타트 무주운동</h3>
+                    <p class="date">2019-06-12</p>
+                </li>
+            </ul>
+        </div>
+        <div class="page2">
+            <div class="p_tit">
+                <h3 class="page_name">반딧불소식지</h3>
+                <img src="./date/sub_logo.png" alt="서브로고">
+                <a href="https://www.muju.go.kr">더 자세한 무주의 소식을 알고 싶다면? &gt;</a>
+            </div>
+            <ul class="img_con">
+                <li class="im_item1">
+                    <img src="./date/bandicbul1.jpg" alt="반딧불소식지1">
+                    <h3 class="img_tit">반딧불소식지 80호</h3>
+                </li>
+                <li class="im_item2">
+                    <img src="./date/bandicbul2.jpg" alt="반딧불소식지2">
+                    <h3 class="img_tit">반딧불소식지 79호</h3>
+                </li>
+                <li class="im_item3">
+                    <img src="./date/bandicbul3.jpg" alt="반딧불소식지3">
+                    <h3 class="img_tit">반딧불소식지 78호</h3>
+                </li>
+                <li class="im_item4">
+                    <img src="./date/bandicbul4.jpg" alt="반딧불소식지4">
+                    <h3 class="img_tit">반딧불소식지 77호</h3>
+                </li>
+            </ul>
+        </div>
+    </main>    
+    <footer id="ft">
+        <nav class="fnb">
+            <ul>
+                <li class="f_item1"><a href="./sub1.html">무주소개</a></li>
+                <li class="f_item2"><a href="./sub2.html">무주관광</a></li>
+                <li class="f_item3"><a href="./sub3.html">무주소식</a></li>
+                <li class="f_item4"><a href="./sub4.html">무주축제</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">&copy; 2019 MUJU. All Rights Reserved.</p>
+    </footer>
+    <a href="#" class="totop"></a>
+</body>
+</html>

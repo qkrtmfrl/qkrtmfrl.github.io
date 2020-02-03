@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@font-face {
+    font-family : "mungjo";
+    src : local("NanumMyeongjo-ExtraBold"), url("./date/font/NanumMyeongjo-ExtraBold.ttf") format("truetype"), url("./date/font/NanumMyeongjo-ExtraBold.eot") format("embeded-opentype"), url(./date/font/NanumMyeongjo-ExtraBold.woff) format("woff");
+}
+
+@font-face {
+    font-family : "gothic";
+    src : local("NanumGothic-Bold"), url("./date/font/NanumGothic-Bold/ttf") format("truetype"), url("./date/font/NanumGothic-Bold/eot") format("embeded-opentype"), url("./date/font/NanumGothic-Bold.woff") format("woff");
+}

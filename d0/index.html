@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta name="description" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="title" content="MUJU">
+    <meta property="keywords" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="description" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="image" content="./date/muju_icon2.png">
+    <link rel="icon" href="./date/muju_icon.png" type="image/png">
+    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./main.js"></script>
+    <title>MUJU</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        body, html { width: 100vw; font-family: "gothic"; overflow-x: hidden; position: relative;}
+        ul { list-style: none;}
+        a { text-decoration: none;}
+        input, button, label { border: 0; outline: 0; background-color: transparent;}
+        
+/*        헤더영역*/
+        #hd { min-width: 100vw; position: relative;}
+        .tnb { min-width: 100vw; height: 40px; background-color: rgba(0,0,0,0.3); position: absolute; z-index: 9;}
+        .tnb ul { float: right; margin-right: 15%;}
+        .tnb li { float: left; margin-left: 40px;}
+        .tnb a { display: block; line-height: 40px; color: #fff; font-weight: bold; position: relative;}
+        .tnb a::before { content: ""; display: block; width: 1px; height: 10px; background-color: #fff; position: absolute; top: 15px; left: -20px;}
+        .t_item1 a::before { display: none;}
+        .tnb a:hover { color: #141784;}
+        .menu_btn { display: block; width: 40px; height: 40px; position: fixed; top: 50px; left: 15%; cursor: pointer; z-index: 99;}
+        .menu_btn span { display: block; width: 40px; height: 5px; background-color: #fff; margin-top: 8px; box-shadow: 2px 2px 5px #333;}
+        .menu_btn span:last-child { width: 20px;}
+        #ck1 { display: none;}
+        #ck1:checked ~ .gnb { left: 0;}
+        .gnb { position: fixed; width: 400px; height: 100vh; background: #fff; top: 0; left: -400px; transition: 0.1s; z-index: 999;}
+        .close_btn { display: block; width: 30px; height: 30px; float: right; margin-top: 20px; margin-right: 20px; cursor: pointer; position: relative;}
+        .close_btn span { display: block; width: 2px; height: 30px; transform: rotate(45deg); background: #000;}
+        .close_btn span:last-child { transform: rotate(-45deg); position: absolute; top: 0;}
+        .main { width: 200px; margin: 150px auto 100px auto;}
+        .main li { width: 200px; height: 70px; }
+        .main a { display: block; text-align: center; line-height: 70px; font-size: 35px; color: #333; font-weight: bolder;}
+        .main a:hover { color: #141784;  border-bottom: 3px solid #141784;}
+        .sub { width: 100px; margin: 0 auto;}
+        .sub li { width: 100px; height: 35px; margin-top: 10px;}
+        .sub a { display: block; text-align: center; line-height: 35px; font-size: 23px; color: #141784;}
+        .sub a:hover { text-decoration: underline;}
+        .sub2 { width: 330px; margin: 200px auto;}
+        .sub2 li { width: 148px; float: left;}
+        .sub2 li:first-child { border-right: 1px solid #ddd;}
+        .sub2 li:last-child { margin-left: 10px;}
+        .sub2 a { display: block; color: #333; text-align: center;}
+        
+/*        푸터영역*/
+        #ft { position: absolute; bottom: 0; min-width: 70%; height: 100px; background-color: #333; left: 288px;}
+        .fnb { width: 400px; height: 100px; float: left; margin-left: 40px;}
+        .fnb li { width: 100px; float: left; }
+        .fnb a { display: block; text-align: center; line-height: 100px; color: #ddd;}
+        .copyright { display: block; float: right; margin-right: 70px; color: #ddd; line-height: 100px;}
+        
+/*        totop 영역*/
+        .totop {
+            position: fixed;
+            right: 60px;
+            bottom: 50px;
+            z-index: 999;
+            display: block;
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: #f0f0f0;
+            color: #333;
+            border-radius: 6px;
+            box-shadow: 0px 0px 12px #333;
+        }
+    </style>    
+</head>
+<body>
+    <header id="hd">
+        <nav class="tnb">
+            <ul>
+                <li class="t_item1"><a href="./index.html">main</a></li>
+                <li class="t_item2"><a href="./lojo.html">login</a></li>
+                <li class="t_item3"><a href="./lojo.html">join</a></li>
+            </ul>
+        </nav>
+        <input type="checkbox" id="ck1">
+        <label for="ck1" class="menu_btn">
+            <span></span>    
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="gnb">
+            <label for="ck1" class="close_btn">
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="main">
+                <li class="g_item1"><a href="./sub1.html">무주소개</a></li>
+                <li class="g_item2"><a href="./sub2.html">무주관광</a></li>
+                <li class="g_item3"><a href="./sub3.html">무주소식</a></li>
+                <li class="g_item4"><a href="./sub4.html">무주축제</a></li>
+            </ul>
+            <ul class="sub">
+                <li class="gs_item1"><a href="./index.html">main</a></li>
+                <li class="gs_item2"><a href="./lojo.html">login</a></li>
+                <li class="gs_item3"><a href="./lojo.html">join</a></li>
+            </ul>
+            <ul class="sub2">
+                <li class="gb_item1"><a href="./palce.html">무주군청위치</a></li>
+                <li class="gb_item2"><a href="./palce.html">무주군청전화번호</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="con">
+        <div class="page" id="page1">
+            <figure class="vs">
+                <video src="./date/muju1.mp4" autoplay loop></video>
+            </figure>
+            <section class="page_wrap">
+                <h2 class="page_tit">MUJU</h2>
+                <form action="" id="frm1">
+                    <input type="text" class="search">
+                    <input type="submit" class="search_btn">
+                </form>
+            </section>
+        </div>
+        <div class="page" id="page2">
+          <h3 class="page_logo">MUJU</h3>
+            <form action="" id="frm2">
+                   <input type="text" class="seach_box">
+                   <input type="submit" class="seach_btn2">
+            </form>
+           <div class="page_wrap2">
+                <h2 class="page_tit2">MUJU NEWS</h2>
+                <ul>
+                    <li class="n_item1">
+                        <a href="./sub3.html">
+                            <h3 class="con_tit">포토뉴스</h3>
+                            <h4 class="con_tit2">제8회 무주군 이장 한마음<br>체육대회</h4>
+                            <p>이장들이 모여 마을간의 친목도모를 하였다.</p>
+                            <span>2019-06-18</span>
+                        </a>
+                    </li>
+                    <li class="n_item2">
+                        <a href="./sub3.html">
+                            <h3 class="con_tit">포토뉴스</h3>
+                            <h4 class="con_tit2">국가유공자 명패 달기</h4>
+                            <p>국가유공자들의 집에 명패를 달아주었다.</p>
+                            <span>2019-06-18</span>
+                        </a>
+                    </li>
+                    <li class="n_item3">
+                        <a href="./sub3.html">
+                            <h3 class="con_tit">포토뉴스</h3>
+                            <h4 class="con_tit2">자활 생산품 장터</h4>
+                            <p>자신들이 만든 제품을 팔 수 있는 장터가 열렸다.</p>
+                            <span>2019-06-13</span>
+                        </a>
+                    </li>
+                    <li class="n_item4">
+                        <a href="./sub3.html">
+                            <h3 class="con_tit">포토뉴스</h3>
+                            <h4 class="con_tit2">북 스타트 무주운동</h4>
+                            <p>북 스타트운동을 하며 책꾸라미를 전달하였다.</p>
+                            <span>2019-06-12</span>
+                        </a>
+                    </li>
+                    <li class="col4">
+                        <a href="./sub3.html">
+                            <h4 class="con_tit2">반딧불소식지</h4>
+                            <img src="./date/bandicbul1.jpg" alt="반딧불소식지80호" class="pic1">
+                            <img src="./date/bandicbul2.jpg" alt="반딧불소식지79호" class="pic2">
+                            <img src="./date/bandicbul3.jpg" alt="반딧불소식지78호" class="pic3">
+                            <img src="./date/bandicbul4.jpg" alt="반딧불소식지77호" class="pic4">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="page" id="page3">
+          <h3 class="page_logo">MUJU</h3>
+           <form action="" id="frm2">
+                   <input type="text" class="seach_box">
+                   <input type="submit" class="seach_btn2">
+            </form>
+            <div class="page_wrap3">
+                <figure class="slide">
+                    <ul class="img_box">
+                        <li>
+                            <img src="./date/cts73_img01.jpg" alt="무주1경">
+                            <div class="tit_box">
+                                <h3 class="sd_tit">무주33경 중 1경</h3>
+                                <p class="sd_con">통일문으로도 불리는 라제통문은 무주군 설천면에서 무풍면 으로 가는 도중 설천면 두길리 신두[新斗]마을과 소천리 이남 [伊南]마을 사이를 가로질러 암벽을 뚫은 통문을 말하 는데 무주읍에서 동쪽 19킬로미터의 설천은 옛날 신라와 백제의 경계에 위치하여 두 나라가 국경 병참 기지로 삼아 한반도 남부의 동서문화가 교류되던 관문이 었다. 이렇듯 삼국시대부터 고려에 이르기까지 풍속과 문물이 판이한 지역이었던 만큼 지금도 언어와 풍습 등 특색을 간직 하고 있어 설천장날에 가보면 사투리만으로 무주와 무풍 사람을 가려낼 수 있다.</p>
+                                <a href="./sub2.html" class="more">viewmore</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./date/cts73_img02.jpg" alt="무주2경">
+                            <div class="tit_box">
+                                <h3 class="sd_tit">무주33경 중 2경</h3>
+                                <p class="sd_con">라제통문에서 2.9km 거리에 있으며, 구산마을의 남쪽 계곡 운장대(雲壯臺) 앞에 마치 거북이 형상의 바위가 숨어 있는것 같다하여 이름 붙였다.옛날 선녀들이 내려와 목욕을 즐기던 곳이라 하여 강선대(降仙臺)라고도 한다.</p>
+                                <a href="./sub2.html" class="more">viewmore</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./date/cts73_img03.jpg" alt="무주3경">
+                            <div class="tit_box">
+                                <h3 class="sd_tit">무주33경 중 3경</h3>
+                                <p class="sd_con">은구암 남쪽 0.5km 지점에 있다. 흐르는 개울 물소리에 귀를 기울이면 마치 탄금(彈琴)소리와 같이 신비로움을 느낀다고 한다.</p>
+                                <a href="./sub2.html" class="more">viewmore</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="btn_box">
+                        <li class="b_item1"><button class="on"></button></li>
+                        <li class="b_item2"><button></button></li>
+                        <li class="b_item3"><button></button></li>
+                    </ul>
+                </figure>
+            </div>
+            <ul class="ico_box">
+                <li class="i_item1"><a href="./place.html">무주군청 위치</a></li>
+                <li class="i_item2"><a href="./place.html">무주군청 번호</a></li>
+            </ul>
+        </div>
+    </main>    
+    <footer id="ft">
+        <nav class="fnb">
+            <ul>
+                <li class="f_item1"><a href="./sub1.html">무주소개</a></li>
+                <li class="f_item2"><a href="./sub2.html">무주관광</a></li>
+                <li class="f_item3"><a href="./sub3.html">무주소식</a></li>
+                <li class="f_item4"><a href="./sub4.html">무주축제</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">&copy; 2019 MUJU. All Rights Reserved.</p>
+    </footer>
+    <a href="#" class="totop">↑</a>
+</body>
+</html>

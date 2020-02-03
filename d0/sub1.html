@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta name="description" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="title" content="MUJU">
+    <meta property="keywords" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="description" content="무주소개, 무주축제, 무주관광, 무주소식">
+    <meta property="image" content="./date/muju_icon.png">
+    <link rel="icon" href="./date/muju_icon.png" type="image/png">
+    <link rel="stylesheet" href="./font.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./main.js"></script>
+    <title>MUJU</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        body, html { width: 100vw; font-family: "gothic"; overflow-x: hidden; position: relative;}
+        ul { list-style: none;}
+        a { text-decoration: none;}
+        input, button, label { border: 0; outline: 0; background-color: transparent;}
+        
+/*        헤더영역*/
+        #hd { min-width: 100vw; position: relative;}
+        .tnb { min-width: 100vw; height: 40px; background-color: rgba(0,0,0,0.3); position: fixed; z-index: 999;}
+        .tnb ul { float: right; margin-right: 15%;}
+        .tnb li { float: left; margin-left: 40px;}
+        .tnb a { display: block; line-height: 40px; color: #fff; font-weight: bold; position: relative;}
+        .tnb a::before { content: ""; display: block; width: 1px; height: 10px; background-color: #fff; position: absolute; top: 15px; left: -20px;}
+        .t_item1 a::before { display: none;}
+        .tnb a:hover { color: #141784;}
+        .tit { min-width: 100vw; height: 120px; background-color: rgba(0,0,0,0.7); position: fixed; z-index: 9;}
+        .page_logo { display: block; color: #fff; font-family: "mungjo"; font-size: 35px; text-align: center; letter-spacing: 5px; position: absolute; top: 50px; left: 45%; z-index: 9;}
+        #frm2 { width: 400px; height: 50px; float: right; margin-right: 15%; margin-top: 50px; overflow: hidden; }
+        .seach_box { display: block; width: 350px; height: 40px; text-indent: 10px; float: left; transition: 0.5s;  border-bottom: 3px solid #fff; font-size: 20px; color: #fff;}
+        .seach_btn2 { display: block; width: 50px; height: 50px; overflow: hidden; text-indent: 999px; background-image: url("./date/search_btn.png"); background-repeat: no-repeat; background-size: 40px 40px; cursor: pointer;}
+        .menu_btn { display: block; width: 40px; height: 40px; position: fixed; top: 50px; left: 15%; cursor: pointer; z-index: 99;}
+        .menu_btn span { display: block; width: 40px; height: 5px; background-color: #fff; margin-top: 8px; box-shadow: 2px 2px 5px #333;}
+        .menu_btn span:last-child { width: 20px;}
+        #ck1 { display: none;}
+        #ck1:checked ~ .gnb { left: 0;}
+        .gnb { position: fixed; width: 400px; height: 100vh; background: #fff; top: 0; left: -400px; transition: 0.1s; z-index: 999;}
+        .close_btn { display: block; width: 30px; height: 30px; float: right; margin-top: 20px; margin-right: 20px; cursor: pointer; position: relative;}
+        .close_btn span { display: block; width: 2px; height: 30px; transform: rotate(45deg); background: #000;}
+        .close_btn span:last-child { transform: rotate(-45deg); position: absolute; top: 0;}
+        .main { width: 200px; margin: 150px auto 100px auto;}
+        .main li { width: 200px; height: 70px; }
+        .main a { display: block; text-align: center; line-height: 70px; font-size: 35px; color: #333; font-weight: bolder;}
+        .main a:hover { color: #141784;  border-bottom: 3px solid #141784;}
+        .sub { width: 100px; margin: 0 auto;}
+        .sub li { width: 100px; height: 35px; margin-top: 10px;}
+        .sub a { display: block; text-align: center; line-height: 35px; font-size: 23px; color: #141784;}
+        .sub a:hover { text-decoration: underline;}
+        .sub2 { width: 330px; margin: 200px auto;}
+        .sub2 li { width: 148px; float: left;}
+        .sub2 li:first-child { border-right: 1px solid #ddd;}
+        .sub2 li:last-child { margin-left: 10px;}
+        .sub2 a { display: block; color: #333; text-align: center;}
+/*        메인영역*/
+        #con { min-width: 100vw; overflow: hidden; position: relative;}
+        .page_ban { min-width: 100vw; height: 500px; overflow: hidden; position: relative;}
+        .bread { position: absolute; top: 150px; color: #fff; right: 300px; z-index: 9; text-shadow: 2px 2px 5px #333;}
+        .page_ban img { width: 100vw; margin-top: -300px; opacity: 0.8;}
+        .page_tit { position: absolute; top: 45%; left: 38%; color: #fff; font-size: 48px; text-shadow: 5px 5px 5px #333; z-index: 10;}
+        .page_tit2 { position: absolute; top: 58%; left: 44%; color: #fff; font-size: 30px; text-shadow: 5px 5px 5px #333; z-index: 10;}
+        .btn { max-width: 1000px; height: 100px; margin: 80px auto 0 auto;}
+        .btn li { width: 333px; height: 100px; float: left; border-top: 2px dashed #ddd; border-bottom: 1px solid #333; position: relative;}
+        .btn label { display: block; text-align: center; line-height: 100px; font-size: 23px; cursor: pointer; }
+        .btn li:before { content: ""; display: block; width: 333px; height: 3px; position: absolute; background-color: #333; top: -2px;  transition: 0.5s; transform-origin:center; transform: scale(0);}
+        .btn lI:hover::before { transform: scale(1);}
+        .btn li:after { content: ""; display: block; width: 333px; height: 3px; position: absolute; background-color: #141784; bottom: 0px;  transition: 0.5s; transform-origin:center; transform: scale(0);}
+        .btn lI:hover::after { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1:before { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1:after { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1 label { color: #141784; }
+        #ra1:checked ~ #page1 { display: block;}
+        #ra2:checked ~ .btn .bt_item2:before { transform: scale(1);}
+        #ra2:checked ~ .btn .bt_item2:after { transform: scale(1);}
+        #ra2:checked ~ .btn .bt_item2 label { color: #141784; }
+        #ra2:checked ~ #page2 {display: block;}
+        #ra3:checked ~ .btn .bt_item3:before { transform: scale(1);}
+        #ra3:checked ~ .btn .bt_item3:after { transform: scale(1);}
+        #ra3:checked ~ .btn .bt_item3 label { color: #141784;}
+        #ra3:checked ~ #page3 { display: block;}
+        .rao { display: none;}
+        
+/*        page1*/
+        #page1 { min-width: 100vw; height: 100%; margin-top: 80px; display: none;}
+        .p_tit { width: 800px; height: 50px; float: right; margin-right: 10%;}
+        .page_name { color: #141784; font-size: 50px; font-family: "mungjo"; float: left; margin-right: 30px; position: relative;}
+        .p_tit img { display: block; width: 50px; height: 50px;}
+        .page_name::after { content: ""; display: block; min-width: 800px; height: 3px; background-color: #141784; position: absolute; top: 60px; right: -80px;}
+        .pic { margin-top: 150px; margin-left: 300px; float: left;} 
+        .con { display: block; width: 700px; float: right; margin-right: 300px; text-align: right; margin-top: 100px; line-height: 50px;}
+        .img_bx { clear: both; max-width: 80%; margin-left: 300px; padding-top: 100px; position: static;}
+        .img_bx li { width: 25%; float: left; overflow: hidden; margin-left: 50px;}
+        
+/*        page2*/
+        #page2 { clear: both; min-width: 100vw; height: 100%; margin-top: 80px; display: none;}
+        #page2 .p_tit { width: 450px;}
+        .bird { clear: both; min-width: 70%; margin-left: 300px; padding-top: 100px; overflow: hidden;}
+        .bird img { float: left;}
+        .bird_con { width: 1000px; float: right; margin-right: 300px;}
+        .bird_con h3 { font-size: 25px;}
+        .bird_con h3::after { content: ""; display: block; width: 120px; height: 3px; background-color: #141784; margin-top: 5px;}
+        .bird_con p { font-size: 18px; margin-top: 20px; line-height: 30px;}
+        .flo { clear: both;  min-width: 70%; margin-left: 300px; padding-top: 100px; overflow: hidden;}
+        .flo img { float: left;}
+        .flo_con { width: 1000px; float: right; margin-right: 300px;}
+        .flo_con h3 { font-size: 25px;}
+        .flo_con h3::after { content: ""; display: block; width: 120px; height: 3px; background-color: #141784; margin-top: 5px;}
+        .flo_con p { font-size: 18px; margin-top: 20px; line-height: 30px;}
+        .tre { clear: both; min-width: 70%; margin-left: 300px; padding-top: 100px; overflow: hidden;}
+        .tre_con { width: 1000px; float: right; margin-right: 300px;}
+        .tre_con h3 { font-size: 25px;}
+        .tre_con h3::after { content: ""; display: block; width: 120px; height: 3px; background-color: #141784; margin-top: 5px;}
+        .tre_con p { font-size: 18px; margin-top: 20px; line-height: 30px;}
+        
+/*        page3*/
+        #page3 { clear: both; min-width: 100vw; height: 100%; margin-top: 80px; display: none;}
+        #page3 .p_tit { width: 400px;}
+        .map { max-width: 70%; margin-left: 15%; float: left; margin-top: 80px;}
+        .map li { float: left; width: 33%; margin-top: 50px;}
+        .map img { width: 100%;}
+        .img_name { font-size: 25px; text-align: center; line-height: 50px;}
+        
+/*        푸터영역*/
+        #ft { min-width: 100vw; height: 100px; background-color: #333; margin-top: 200px;}
+        .fnb { width: 400px; height: 100px; float: left; margin-left: 300px;}
+        .fnb li { width: 100px; float: left; }
+        .fnb a { display: block; text-align: center; line-height: 100px; color: #ddd;}
+        .copyright { display: block; float: right; margin-right: 300px; color: #ddd; line-height: 100px;}
+    </style>    
+</head>
+<body>
+    <header id="hd">
+        <nav class="tnb">
+            <ul>
+                <li class="t_item1"><a href="./index.html">main</a></li>
+                <li class="t_item2"><a href="./lojo.html">login</a></li>
+                <li class="t_item3"><a href="./lojo.html">join</a></li>
+            </ul>
+        </nav>
+        <div class="tit">
+            <h3 class="page_logo">MUJU</h3>
+            <form action="" id="frm2">
+               <input type="text" class="seach_box">
+               <input type="submit" class="seach_btn2">
+            </form>
+        </div>
+        <input type="checkbox" id="ck1">
+        <label for="ck1" class="menu_btn">
+            <span></span>    
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="gnb">
+            <label for="ck1" class="close_btn">
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="main">
+                <li class="g_item1"><a href="./sub1.html">무주소개</a></li>
+                <li class="g_item2"><a href="./sub2.html">무주관광</a></li>
+                <li class="g_item3"><a href="./sub3.html">무주소식</a></li>
+                <li class="g_item4"><a href="./sub4.html">무주축제</a></li>
+            </ul>
+            <ul class="sub">
+                <li class="gs_item1"><a href="./index.html">main</a></li>
+                <li class="gs_item2"><a href="./lojo.html">login</a></li>
+                <li class="gs_item3"><a href="./lojo.html">join</a></li>
+            </ul>
+            <ul class="sub2">
+                <li class="gb_item1"><a href="./palce.html">무주군청위치</a></li>
+                <li class="gb_item2"><a href="./palce.html">무주군청전화번호</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main id="con">
+        <div class="page_ban">
+            <div class="bread">
+                <p>home &gt; 무주소개</p>
+            </div>
+            <img src="./date/sub_ban1.jpg" alt="배너">
+            <h1 class="page_tit">MUJU Introduce</h1>
+            <h3 class="page_tit2">무주소개</h3>
+        </div>
+        <input type="radio" name="ra" id="ra1" class="rao" checked>
+        <input type="radio" name="ra" id="ra2" class="rao">
+        <input type="radio" name="ra" id="ra3" class="rao">
+        <ul class="btn">
+            <li class="bt_item1"><label for="ra1">무주의역사</label></li>
+            <li class="bt_item2"><label for="ra2">무주의상징</label></li>
+            <li class="bt_item3"><label for="ra3">읍면 소개</label></li>
+        </ul>
+        <div id="page1">
+            <div class="p_tit">
+                <h1 class="page_name">산자수려한 명승의 고장 무주</h1>
+                <img src="./date/sub_logo.png" alt="서브로고1">
+            </div>
+            <img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_20161203080630204Zxv.png" alt="한옥사진" class="pic">
+            <p class="con">무주군은 남북으로 뻗은 소백산맥을 사이에 두고 삼한시대때 동편은 변진, 서편은 마한에 속해 있었고, 삼국시대는 변진의 무풍땅은 신라에 속하여 무산현이라 했으며, 마한의 주계땅은 백제에 속하여 적천현이라 했던 것을 통일 신라 이후에는 종전의 무산을 무풍으로, 적천을 단천으로 개칭했던 것인데
+            고려 건국과 함께 무풍의 지명은 그대로 두고 단천을 주계로 바꾸어 사용해 왔다. 그 후 조선 태종 14년 전국의 행정구역을개편할때 옛 신라땅의 무풍과 백제땅 주계를 합병, 하나의 행정구역으로 편제하면서 두 고을 이름의 첫자를 따 무주라는 새로운 지명을 붙여
+            사용하게 된 것이 오늘에 이르고 있다.</p>
+            <ul class="img_bx">
+                <li class="m_item1"><img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_2016120308195758306A.png" alt="한옥사진2"></li>
+                <li class="m_item2"><img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_20161203082932554Yn3.png" alt="한옥사진3"></li>
+                <li class="m_item3"><img src="https://tour.muju.go.kr/DATA/tour/0/thumb/t_20161203081342104ZaL.png" alt="한옥사진4"></li>
+            </ul>
+        </div>
+        <div id="page2">
+           <div class="p_tit">
+                <h1 class="page_name">무주의 상징</h1>
+                <img src="./date/sub_logo.png" alt="서브로고1">
+            </div>
+            <div class="bird">
+                <img src="./date/bird.jpg" alt="원앙">
+                <div class="bird_con">
+                    <h3 class="bird_name">군새 : 원앙</h3>
+                    <p>우리고장에 서식하는 텃새로서 저수지나 하천 등에서 자주 볼 수 있다.
+                    암.수간에 사이가 좋아 "사랑"을 상징하는 새로 널리 알려져 있어 사랑으로 화합하는 군민정서와 부합된다.</p>
+                </div>
+            </div>
+            <div class="flo">
+                <img src="./date/flower.jpg" alt="철쭉">
+                <div class="flo_con">
+                    <h3 class="flo_name">군꽃 : 철쭉</h3>
+                    <p>낙엽 활엽 관목으로 임지 또는 능선의 나지에서 자라며 나무는 회갈색, 잎은 도란형으로 녹색이다.
+                    꽃은 연한 홍색을 띠고 화관 윗부분에 적갈색 반점이 있다.
+                    이 철쭉은 5월부터 계곡에서 피기 시작하여 덕유산 정상에 이르기까지 분포하여 6월까지 군락으로
+                    장관을 이룬다.</p>
+                </div>
+            </div>
+            <div class="tre">
+                <img src="./date/tree.jpg" alt="주목">
+                <div class="tre_con">
+                    <h3 class="tre_name">군나무 : 주목</h3>
+                    <p>고상성 상목 침엽 교목이며 수간은 적색으로 윤기가 흐른다.
+                    덕유산 주목은 옛부터 항목 또는 적목으로 불리며 주목이 군락하고 있는 봉우리는 향적봉이라는 명칭이
+                    붙어있어 무주군의 지명과도 맥락을 같이 한다.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="page3">
+            <div class="p_tit">
+                <h1 class="page_name">읍면 소개</h1>
+                <img src="./date/sub_logo.png" alt="서브로고1">
+            </div>
+            <ul class="map">
+                <li class="a_item1">
+                    <img src="./date/ansung.jpg" alt="안성면">
+                    <h4 class="img_name">안성면</h4>
+                </li>
+                <li class="a_item2">
+                    <img src="./date/bunam.jpg" alt="부남면">
+                    <h4 class="img_name">부남면</h4>
+                </li>
+                <li class="a_item3">
+                    <img src="./date/sulchun.jpg" alt="설천면">
+                    <h4 class="img_name">설천면</h4>
+                </li>
+                <li class="a_item4">
+                    <img src="./date/muju.jpg" alt="무주읍">
+                    <h4 class="img_name">무주읍</h4>
+                </li>
+                <li class="a_item5">
+                    <img src="./date/mupung.jpg" alt="무풍면">
+                    <h4 class="img_name">무풍면</h4>
+                </li>
+                <li class="a_item6">
+                    <img src="./date/juksang.jpg" alt="적상면">
+                    <h4 class="img_name">적상면</h4>
+                </li>
+            </ul>
+        </div>
+    </main>    
+    <footer id="ft">
+        <nav class="fnb">
+            <ul>
+                <li class="f_item1"><a href="./sub1.html">무주소개</a></li>
+                <li class="f_item2"><a href="./sub2.html">무주관광</a></li>
+                <li class="f_item3"><a href="./sub3.html">무주소식</a></li>
+                <li class="f_item4"><a href="./sub4.html">무주축제</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">&copy; 2019 MUJU. All Rights Reserved.</p>
+    </footer>
+    <a href="#" class="totop"></a>
+</body>
+</html>
