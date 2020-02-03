@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+@font-face {
+    font-family:"dan"; src:local("Cafe24Danjunghae"), url("./font/Cafe24Danjunghae.ttf") format("truetype"), url("./font/Cafe24Danjunghae.eot") format("embedded-opentype"), url("./font/Cafe24Danjunghae.woff") format("woff")
+}
+
+@font-face {
+    font-family:"dang"; src:local("Cafe24Dangdanghae"), url("./font/Cafe24Dangdanghae.ttf") format("truetype"), url("./font/Cafe24Dangdanghae.eot") format("embedded-opentype"), url(./font/Cafe24Dangdanghae.woff) format("woff")
+}
