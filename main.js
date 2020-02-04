@@ -21,6 +21,8 @@ $(document).ready(function(){
     $("#up").click(function(){
         $("html").animate({scrollTop : 0},800);
     });
+    
+    var ht = parseInt($(window).height());
 
     $(window).on('scroll',function(){
         //up 버튼 첫째페이지에서 숨기기
@@ -31,8 +33,13 @@ $(document).ready(function(){
             $("#up").css('display','none');
         }
         //bar anmaition
-        if(top>=offset.top+500){
+        var sc_top = parseInt($(window).scrollTop());
+        console.log(sc_top);
+        n = parseInt(sc_top/(ht-5));
+        if(n==2){
             $(".sk_bar").addClass("bar");
+        } else {
+            $(".sk_bar").removeClass("bar");
         }
     });
 
