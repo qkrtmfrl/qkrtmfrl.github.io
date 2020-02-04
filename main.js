@@ -31,7 +31,7 @@ $(document).ready(function(){
             $("#up").css('display','none');
         }
         //bar anmaition
-        if(top>=offset.top){
+        if(top>=offset.top+500){
             $(".sk_bar").addClass("bar");
         }
     });
