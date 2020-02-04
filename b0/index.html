@@ -67,8 +67,8 @@
         #page1 img { display: block; animation: ani1 8s ease-in-out infinite; float: left;}
         #page2 { position: relative;}
         .page_wrap { width: 100%; height: calc(100vh - 200px); background-color: #efefef; margin-top: 200px; float: left; position: absolute; top: 0; z-index: -9;}
-        .page_wrap::before { content: ""; display: block; border-style: solid; border-width: 200px 100vw 0 100vw; border-color: transparent transparent transparent #efefef; z-index: -10; position: absolute; top: -200px}
-        .page_wrap::after { content: ""; display: block; border-style: solid; border-width: 0 100vw 200px 100vw; border-color: transparent transparent #c4d0f5 transparent; position: absolute; top: -200px; z-index: -11;}
+        .page_wrap::before { content: ""; display: block; border-style: solid; border-width: 200px 100vw 0 100vw; border-color: transparent transparent transparent #efefef; z-index: -10; position: absolute; top: -200px; animation: ani3 0.8s ease-in-out infinite;}
+        .page_wrap::after { content: ""; display: block; border-style: solid; border-width: 0 100vw 200px 100vw; border-color: transparent transparent #c4d0f5 transparent; position: absolute; top: -200px; z-index: -11; animation: ani2 0.8s ease-in-out infinite;}
         .vs { width: 80%;  float: left; margin-left: 10%; overflow: hidden;}
         .img_box { width: 400%; height: 100%; margin-top: 15%;}
         .img_box li { width: 25%; height: 100%; float: left; position: relative;}
@@ -90,6 +90,18 @@
             from { transform: rotate(0deg);}
             50% { transform: rotate(-180deg);}
             to { transform: rotate(-360deg);}
+        }
+
+        @keyframes ani2 {
+            from { border-width: 0 100vw 200px 100vw;}
+            50% { border-width: 0 150vw 200px 150vw;}
+            to { border-width: 0 100vw 200px 100vw;}
+        }
+
+        @keyframes ani3 {
+            from { border-width: 200px 100vw 0 100vw;}
+            50% { border-width: 200px 150vw 0 150vw;}
+            to { border-width: 200px 100vw 0 100vw;}
         }
         .title { position: absolute; font-family: "dang"; clear: both;}
         
@@ -199,28 +211,28 @@
                 <figure class="vs">
                     <ul class="img_box">
                         <li class="item1">
-                           <video src="./data/Onward.mp4" class="vid" autoplay controls loop></video>
+                           <video src="./data/Onward.mp4" class="vid" autoplay loop controls></video>
                             <div class="tit">
                                 <h2 class="slide_tit">ONWARD</h2>
                                 <p class="slide_com">마법이 사라진 세상, 단 하루의 기적!</p>
                             </div>
                         </li>
                         <li class="item2">
-                            <video src="./data/toystory4.mp4" class="vid" autoplay controls loop></video>
+                            <video src="./data/toystory4.mp4" class="vid" autoplay loop controls></video>
                             <div class="tit">
                                 <h2 class="slide_tit">TOYSTORY4</h2>
                                 <p class="slide_com">우리의 여행은 아직 끝나지 않았다!</p>
                             </div>
                         </li>
                         <li class="item3">
-                           <video src="./data/coco.mp4" class="vid" autoplay controls loop></video>
+                           <video src="./data/coco.mp4" class="vid" autoplay loop controls></video>
                             <div class="tit">
                                 <h2 class="slide_tit">COCO</h2>
                                 <p class="slide_com">영원히 기억하고 싶은 황홀한 모험이 시작된다!</p>
                             </div>
                         </li>
                         <li class="item4">
-                           <video src="./data/incredouble.mp4" class="vid" autoplay controls loop></video>
+                           <video src="./data/incredouble.mp4" class="vid" autoplay loop controls></video>
                             <div class="tit">
                                 <h2 class="slide_tit">INCREDIBLES 2</h2>
                                 <p class="slide_com">지금까지의 히어로는 잊어라!</p>
