@@ -35,12 +35,16 @@
     .intro li::before { width: 2px;}
     .bottom_box { display: none;}
     .personality, .pine { font-size: 2vh;}
-    .personality { margin-top: 4%; margin-bottom: 2%;}
+    .personality { margin-top: 4%; margin-bottom: 0.5%;}
     .personality img, .pine img { width: 20%;}
-    .sk_con { width: 40px; height: 40px; line-height: 40px; font-size: 8px;}
+    .sk_con { width: 30px; height: 30px; line-height: 30px; font-size: 0.5px; text-align: center;}
 }
 @media screen and ( width:812px ) and ( height:375px){
+    .personality img, .pine img { width: 10%;}
     .cha { bottom: -22%;}
+}
+@media screen and (width:823px) and ( height:411px){
+    .personality img, .pine img { width: 15%;}
 }
 @media screen and ( width:1024px){ 
     .cha { bottom: -8%;}

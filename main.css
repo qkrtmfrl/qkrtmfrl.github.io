@@ -43,6 +43,8 @@ a { text-decoration: none;}
 .pine { clear: both;}
 .pine img { float: left; margin-right: 3%; margin-bottom: 3%;}
 
+/* page3 */
+
 /*page4*/
 #page4::before { content: ""; display: block; border-width: 50vw 100vh 100vw 100vw; border-style: solid; border-color: #99ce66 #99ce66 transparent transparent; position: absolute; width: 0; height: 0;}
 #page4 { position: relative;}

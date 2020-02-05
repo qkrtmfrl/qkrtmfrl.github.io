@@ -34,16 +34,17 @@ $(document).ready(function(){
         }
         //bar anmaition
         var sc_top = parseInt($(window).scrollTop());
-        console.log(sc_top);
         n = parseInt(sc_top/(ht-5));
+        console.log(n);
         if(n==2){
             $(".sk_bar").addClass("bar");
-        } else {
+        } else if(n!=2) {
             $(".sk_bar").removeClass("bar");
         }
     });
 
     //스크롤링이펙트
+    // 데스크탑
     var win_h = $(window).height();
         $('.page').each(function(index){
             $(this).attr("data-index",win_h * index);
@@ -58,4 +59,62 @@ $(document).ready(function(){
             return false; 
             }
         });
+    // 모바일
+    var _temp = 1;
+
+var page = 0;
+
+$(document).scroll(function(){
+
+	if(!$hash.j_idx)
+
+	{
+
+		var max_height = $(document).height();
+
+		var now_height = $(window).scrollTop() + $(window).height();
+
+		
+
+		//끝에 닿기전에 미리 함수실행
+
+		if((max_height <= now_height + 400) && _temp == 1)
+
+		{
+
+			page = page + 1;
+
+			get_list();
+
+		}
+
+	}
+
+});
+
+
+
+
+
+//데이터 가져오는 함수
+
+function get_list()
+
+{
+
+	//데이터처리..
+
+
+
+	//더해진 page 값으로 가져올 page확인
+
+
+
+	//마지막 페이지인경우 _temp의 값을 0으로 바꾸어준다
+
+	if(!data) _temp = 0;
+
+
+
+}
 });
