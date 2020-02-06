@@ -24,9 +24,30 @@ $(document).ready(function(){
     
     var ht = parseInt($(window).height());
 
+    // 데스크탑 스크롤링 이펙트
+    var win_h = $(window).height();
+    $('.page').each(function(index){
+        $(this).attr("data-index",win_h * index);
+        ofs = $(this).offset().top;
+        idx = $(this).index();
+    });
+    $('.page').on("mousewheel DOMMouseScroll",function(e){
+        var sectionPos = parseInt($(this).attr("data-index"));
+        if(e.originalEvent.wheelDelta >= 0) {
+            $("html,body").stop().animate({scrollTop:sectionPos - win_h},800);
+        return false;
+        } else if (e.originalEvent.wheelDelta < 0) {
+            $("html,body").stop().animate({scrollTop:sectionPos + win_h},800);
+        return false; 
+        }
+    });
+    var presc = $(window).scrollTop();
+
     $(window).on('scroll',function(){
         //up 버튼 첫째페이지에서 숨기기
         var top = $(this).scrollTop();
+        var nowsc = $(window).scrollTop();
+        console.log(nowsc);
         if(top>$("#page1").offset().top){
             $("#up").css('display','block');
         } else {
@@ -35,86 +56,10 @@ $(document).ready(function(){
         //bar anmaition
         var sc_top = parseInt($(window).scrollTop());
         n = parseInt(sc_top/(ht-5));
-        console.log(n);
         if(n==2){
             $(".sk_bar").addClass("bar");
-        } else if(n!=2) {
+        } else{
             $(".sk_bar").removeClass("bar");
         }
     });
-
-    //스크롤링이펙트
-    // 데스크탑
-    var win_h = $(window).height();
-        $('.page').each(function(index){
-            $(this).attr("data-index",win_h * index);
-        });
-        $('.page').on("mousewheel DOMMouseScroll",function(e){
-            var sectionPos = parseInt($(this).attr("data-index"));
-            if(e.originalEvent.wheelDelta >= 0) {
-                $("html,body").stop().animate({scrollTop:sectionPos - win_h},800);
-            return false;
-            } else if (e.originalEvent.wheelDelta < 0) {
-                $("html,body").stop().animate({scrollTop:sectionPos + win_h},800);
-            return false; 
-            }
-        });
-    // 모바일
-    var _temp = 1;
-
-var page = 0;
-
-$(document).scroll(function(){
-
-	if(!$hash.j_idx)
-
-	{
-
-		var max_height = $(document).height();
-
-		var now_height = $(window).scrollTop() + $(window).height();
-
-		
-
-		//끝에 닿기전에 미리 함수실행
-
-		if((max_height <= now_height + 400) && _temp == 1)
-
-		{
-
-			page = page + 1;
-
-			get_list();
-
-		}
-
-	}
-
-});
-
-
-
-
-
-//데이터 가져오는 함수
-
-function get_list()
-
-{
-
-	//데이터처리..
-
-
-
-	//더해진 page 값으로 가져올 page확인
-
-
-
-	//마지막 페이지인경우 _temp의 값을 0으로 바꾸어준다
-
-	if(!data) _temp = 0;
-
-
-
-}
 });

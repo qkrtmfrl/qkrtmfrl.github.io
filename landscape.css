@@ -1,8 +1,8 @@
 @charset "utf-8";
-/*pae2*/
+/*page2*/
 .p_tit { width: 10%;}
 .top_box { width: 45%; overflow: hidden; float: left;}
-.cha { width: 22%;}
+.cha { width: 22%; bottom: -15%;}
 .photo { width: 15%;}
 .intro { font-size: 3.5vh; margin-top: 8%; float: left;}
 .intro li::before { width: 3px; height: 1.5vh; margin-left: -10%;}
@@ -27,6 +27,8 @@
 .sk_con { display: block; width: 80px; height: 80px; border-radius: 100%; margin: 0 auto; line-height: 80px; font-size: 1vh; background-color: #fff; text-align: center; border-width: 8px; border-style: solid; border-color: #99ce66 #99ce66 #43b549 #43b549;}
 /*page4*/
 
+/* page5 */
+#map_canvas { height: 60vh; width: 60%;}
 
 @media screen and ( max-height:767px){
     .top_box { width: 80%;}
@@ -38,21 +40,54 @@
     .personality { margin-top: 4%; margin-bottom: 0.5%;}
     .personality img, .pine img { width: 20%;}
     .sk_con { width: 30px; height: 30px; line-height: 30px; font-size: 0.5px; text-align: center;}
+    /* page4 */
+    .deco--circle, .slide__inner { width: 200px; height: 200px;}
+    .deco--expander { margin: -100px 0 0 -95px;}
+    .slideshow { margin-top: 5%;}
+    .navbutton { display: none;}
+    .slide__title--preview { margin: -1.5em 0 0 0; font-size: 0.5em;}
+    .js .slide__content { top: 3%;}
+    .slide__img--large { height: 30vh;}
+    img.slide__description { width: 20%;}
+    .slide__description { width: 100%; font-size: 0.5em;}
+    .button--buy { display: inline-block;}
+    .slide__title--main { font-size: 1.5em;}
+    .slide__img--large { margin: 0;}
+    /* page5 */
+    .con_tit { font-size: 5vh;}
+    .contect { font-size: 0.5vh; width: 80%;}
+    .contect li { width: 25%;}
+    .contect li:first-child { margin-left: 5%;}
+    .contect li:nth-child(2) { margin-left: -3%; margin-right: 3%;}
+    .sns_img {margin-right: 3px; }
+    .sns { width: 40%; margin: 5% 20%;}
 }
 @media screen and ( width:812px ) and ( height:375px){
     .personality img, .pine img { width: 10%;}
     .cha { bottom: -22%;}
 }
+
+@media screen and ( width:568px) and ( height:320px){
+    .contect li:first-child { margin: 1%;}
+    .sns { margin:2% 20%;}
+}
+
 @media screen and (width:823px) and ( height:411px){
     .personality img, .pine img { width: 15%;}
 }
 @media screen and ( width:1024px){ 
     .cha { bottom: -8%;}
     .intro { font-size: 2vh; margin-left: 10%;}
+    .slide__img--large { margin: 2em auto 2em;}
+    .contect li:first-child { margin-left: 5%;}
+    .contect li { width: 25%;}
+    .contect li:nth-child(2) { margin-left: -5%;}
+    .sns { width: 40%; margin-left: 20%;}
 }
-@media screen and ( min-width:1025px){
+@media screen and ( height:1024px){
     .photo { width: 18%;}
     .cha { bottom: -15%;}
     .intro { font-size: 2vh; margin-left: 10%;}
     .t_tit { margin-bottom: 20px;}
+    .contect li:first-child { margin-left: 5%;}
 }

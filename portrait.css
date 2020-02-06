@@ -32,6 +32,16 @@
 #page4::before { border-width: 175vw 100vh 100vw 100vw;}
 .slide__price { margin-bottom: 5%;}
 
+/* page5 */
+.con_tit { width: 100%; height: 20vh; line-height: 20vh;}
+#map_canvas { height: 40vh; width: 100%;}
+#map { float: left; margin: 5% 10%;}
+.contect { float: left; width: 80%;}
+.contect li { width: 100%; text-align: left; margin-bottom: 5%;}
+.contect li:first-child { margin-left: 3%;}
+.sns { float: left; width: 50%;}
+.sns img { width: 40%;}
+
 @media screen and ( max-height:767px){
     .top_box { height: 100%;}
     .photo { width: 30%;}
@@ -55,6 +65,10 @@
     .slide { margin-top: 10%;}
     .slide__price { width: 100%;}
     .slide__price--large { width: 40%;}
+    .contect { width: 80%;}
+    .contect li { width: 30%;}
+    .contect li:first-child { margin-left: 8%;}
+    .contect li:nth-child(2) { margin-left: -5%; margin-right: 20px;}
 }
 
 @media screen and (min-width:1024px) {
